@@ -1,0 +1,107 @@
+:root {
+  --bg: #0a0e27;
+  --card: rgba(14,15,22,0.82);
+  --border: rgba(212,175,55,0.14);
+  --gold: #f5c842;
+  --gold-dim: rgba(224,192,112,0.7);
+  --text: #ffffff;
+  --text-dim: rgba(255,255,255,0.65);
+  --text-mute: rgba(255,255,255,0.45);
+  --pause-bg: rgba(245,200,66,0.06);
+  --pause-border: rgba(245,200,66,0.35);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+  padding: 0 5vw 6rem;
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+header { padding: 3rem 0 2rem; text-align: center; }
+.eyebrow {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold-dim); margin-bottom: 0.75rem;
+}
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+.sub { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; max-width: 56ch; margin: 0 auto; }
+.progress-wrap { margin: 2rem 0 3rem; }
+.progress-track {
+  height: 8px; background: rgba(255,255,255,0.06); border-radius: 50px; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--gold), #fff2c2);
+  width: 0%; transition: width 0.4s ease;
+}
+.progress-label {
+  display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-mute);
+  margin-top: 0.5rem;
+}
+.progress-label b { color: var(--gold); font-weight: 600; }
+.phase {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  margin-bottom: 1.25rem; overflow: hidden;
+}
+.phase-head {
+  display: flex; align-items: center; gap: 0.9rem; padding: 1.25rem 1.5rem; cursor: pointer;
+  user-select: none;
+}
+.phase-num {
+  font-family: Georgia, serif; font-size: 1.4rem; color: var(--gold); width: 2rem; flex-shrink: 0;
+}
+.phase-titles { flex: 1; }
+.phase-titles h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.phase-titles p { margin: 0.15rem 0 0; font-size: 0.8rem; color: var(--text-mute); }
+.phase-count { font-size: 0.8rem; color: var(--text-dim); white-space: nowrap; }
+.chevron { color: var(--text-mute); transition: transform 0.25s ease; font-size: 0.8rem; }
+.phase.open .chevron { transform: rotate(180deg); }
+.phase-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.phase.open .phase-body { max-height: 4000px; }
+.phase-intro {
+  padding: 0 1.5rem 1rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;
+  border-top: 1px solid var(--border);
+}
+.item {
+  display: flex; gap: 0.85rem; padding: 1rem 1.5rem; border-top: 1px solid var(--border);
+}
+.item input[type=checkbox] {
+  width: 20px; height: 20px; margin-top: 0.15rem; flex-shrink: 0; accent-color: var(--gold);
+  cursor: pointer;
+}
+.item-body { flex: 1; }
+.item-title { font-size: 0.95rem; font-weight: 500; margin: 0 0 0.3rem; }
+.item.done .item-title { color: var(--text-mute); text-decoration: line-through; }
+.item-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.55; margin: 0; }
+.item.done .item-desc { color: var(--text-mute); }
+.pause {
+  background: var(--pause-bg); border: 1px dashed var(--pause-border); border-radius: 14px;
+  padding: 1.1rem 1.4rem; margin: 0 0 1.25rem; display: flex; gap: 0.85rem;
+}
+.pause-icon { font-size: 1.3rem; line-height: 1; }
+.pause-body b { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.pause-body p { margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--text-mute); }
+footer a { color: var(--gold); text-decoration: none; }
+/* ── GEO revamp additions ── */
+.note { background: var(--pause-bg); border: 1px solid var(--pause-border); border-radius: 14px; padding: 1rem 1.3rem;
+  font-size: 0.85rem; line-height: 1.6; color: var(--text-dim); margin: 0 0 2rem; }
+.note b { color: var(--gold); }
+.sub b { color: var(--gold); font-weight: 600; }
+.item-src { margin: 0.4rem 0 0; font-size: 0.74rem; color: var(--text-mute); font-style: italic; }
+.item-desc code { background: rgba(255,255,255,0.08); border-radius: 4px; padding: 0.05rem 0.35rem; font-size: 0.8rem; word-break: break-word; }
+.tag { display: inline-block; margin-left: 0.5rem; padding: 0.1rem 0.55rem; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #1a1a00; background: var(--gold); border-radius: 50px; vertical-align: middle; }
+.pause.gate { border-style: solid; border-color: var(--gold); background: rgba(245,200,66,0.1); }
+.prompt-group { padding: 1rem 1.5rem; border-top: 1px solid var(--border); }
+.prompt-group h3 { margin: 0 0 0.5rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dim); }
+.prompt-group ol { margin: 0; padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; }
+.prompt-group li.core::marker { color: var(--gold); font-weight: 700; }
+.prompt-tools { display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem 1rem; font-size: 0.78rem; color: var(--text-mute); }
+.copy-btn { background: var(--gold); color: #1a1a00; border: 0; border-radius: 50px; padding: 0.45rem 1rem; font-weight: 600; font-size: 0.78rem; cursor: pointer; }
