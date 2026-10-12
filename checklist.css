@@ -105,3 +105,18 @@ footer a { color: var(--gold); text-decoration: none; }
 .prompt-group li.core::marker { color: var(--gold); font-weight: 700; }
 .prompt-tools { display: flex; align-items: center; gap: 1rem; padding: 0 1.5rem 1rem; font-size: 0.78rem; color: var(--text-mute); }
 .copy-btn { background: var(--gold); color: #1a1a00; border: 0; border-radius: 50px; padding: 0.45rem 1rem; font-weight: 600; font-size: 0.78rem; cursor: pointer; }
+
+/* ── Day-0 results card (add to the end of checklist.css, after the earlier additions) ── */
+.res-wrap { padding: 0 1.5rem 1rem; overflow-x: auto; }
+.res-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 0.78rem; line-height: 1.45; }
+.res-table th, .res-table td { text-align: left; padding: 0.55rem 0.6rem; border-top: 1px solid var(--border); vertical-align: top; color: var(--text-dim); }
+.res-table th { color: var(--gold-dim); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.68rem; }
+.res-table td.y { color: #7ee2a8; }
+.res-table td.n { color: var(--text-mute); }
+.res-score td { color: var(--gold); font-weight: 600; border-top: 2px solid var(--pause-border); }
+.res-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding: 0 1.5rem 1.25rem; }
+.res-cols h3 { margin: 0 0 0.4rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dim); }
+.res-cols p, .res-list li { font-size: 0.82rem; line-height: 1.6; color: var(--text-dim); margin: 0; }
+.res-list { margin: 0; padding: 0 1.5rem 1.25rem 2.6rem; display: grid; gap: 0.5rem; }
+.res-list b { color: var(--text); font-weight: 600; }
+@media (max-width: 640px) { .res-cols { grid-template-columns: 1fr; } }
