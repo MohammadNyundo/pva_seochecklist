@@ -269,39 +269,37 @@ const DATA = [
 const phasesEl = document.getElementById("phases");
 const KEY = "pva-geo-checklist-v5";
 const TAGS = { quick: "Quick win" };
-let idx = 0;
 let state = {};
+let filter = "all";
 try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
 function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+const steps = []; /* {key, title, phaseEl, rowEl} in order */
 
-function updateProgress() {
-  const boxes = document.querySelectorAll(".item input[type=checkbox]");
-  const done = [...boxes].filter(b => b.checked).length;
-  document.getElementById("total").textContent = boxes.length;
-  document.getElementById("stepCount").textContent = boxes.length;
-  document.getElementById("done").textContent = done;
-  document.getElementById("fill").style.width = boxes.length ? (done / boxes.length * 100) + "%" : "0%";
-}
+function isDone(key, it) { return key in state ? state[key] : it[4] === "done"; }
 
-function toggleOnHead(phase) {
-  phase.querySelector(".phase-head").addEventListener("click", () => phase.classList.toggle("open"));
-}
-
-function infoCard(num, title, sub, count, bodyHtml) {
+function card(num, title, sub, right) {
   const phase = document.createElement("div");
   phase.className = "phase";
   phase.innerHTML = `
     <div class="phase-head">
       <div class="phase-num">${num}</div>
       <div class="phase-titles"><h2>${title}</h2><p>${sub}</p></div>
-      <div class="phase-count">${count}</div><div class="chevron">▼</div>
+      <div class="phase-count">${right}</div><div class="chevron">▼</div>
     </div>
-    <div class="phase-body">${bodyHtml}</div>`;
+    <div class="phase-body"></div>`;
+  phase.querySelector(".phase-head").addEventListener("click", () => {
+    const wasOpen = phase.classList.contains("open");
+    phasesEl.querySelectorAll(".phase.open").forEach(p => p.classList.remove("open"));
+    if (!wasOpen) {
+      phase.classList.add("open");
+      setTimeout(() => phase.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    }
+  });
   phasesEl.appendChild(phase);
-  toggleOnHead(phase);
   return phase;
 }
 
+let idx = 0;
 DATA.forEach(block => {
   if (block.pause) {
     const p = document.createElement("div");
@@ -313,12 +311,13 @@ DATA.forEach(block => {
 
   if (block.prompts) {
     const total = PROMPTS.reduce((n, g) => n + g[1].length, 0);
+    const phase = card("?", "The prompt bank", "What owners type when they look for help", total + " prompts");
     const groups = PROMPTS.map(g => `<div class="prompt-group"><h3>${g[0]}</h3><ol>${
       g[1].map(q => `<li${q.startsWith("*") ? ' class="core"' : ""}>${q.replace(/^\*/, "")}</li>`).join("")}</ol></div>`).join("");
-    const phase = infoCard("?", "The prompt bank", "What owners type when they look for help. Gold markers are the monthly core set", total + " prompts",
-      `<div class="phase-intro">Phrased the way hotel, villa, tour and restaurant owners in Diani ask. How-to prompts (M2 and W2) never name businesses, so judge them on whether we are cited. Add real questions from enquiries, field visits and Search Console over time.</div>
+    phase.querySelector(".phase-body").innerHTML =
+      `<div class="phase-intro">Phrased the way hotel, villa, tour and restaurant owners in Diani ask. <span class="gold">Gold numbers</span> are the monthly core set. How-to prompts (M2 and W2) never name businesses, so judge them on whether we are cited.</div>
        ${groups}
-       <div class="prompt-tools"><button class="copy-btn" type="button">Copy all prompts</button><span class="copy-msg"></span></div>`);
+       <div class="prompt-tools"><button class="copy-btn" type="button">Copy all prompts</button><span class="copy-msg"></span></div>`;
     phase.querySelector(".copy-btn").addEventListener("click", () => {
       const text = PROMPTS.map(g => g[0] + "\n" + g[1].map(q => "- " + q.replace(/^\*/, "")).join("\n")).join("\n\n");
       navigator.clipboard.writeText(text).then(() => { phase.querySelector(".copy-msg").textContent = "Copied"; });
@@ -327,46 +326,106 @@ DATA.forEach(block => {
   }
 
   if (block.results) {
-    infoCard("✓", "Where we stand today", "AI test Oct 2026 · Search Console and Bing to 21 Nov 2026", "read this first", RESULTS_HTML);
+    const phase = card("✓", "Where we stand today", "AI test Oct 2026 · search data to 21 Nov 2026", "read first");
+    phase.querySelector(".phase-body").innerHTML = RESULTS_HTML;
     return;
   }
 
   const n = idx++;
-  const phase = document.createElement("div");
-  phase.className = "phase has-steps";
-  const introHtml = block.intro ? `<div class="phase-intro">${block.intro}</div>` : "";
-  const itemsHtml = block.items.map((it, i) => {
+  const phase = card(block.icon, block.title, block.time, "");
+  phase.classList.add("has-steps");
+  const body = phase.querySelector(".phase-body");
+  if (block.intro) body.insertAdjacentHTML("beforeend", `<div class="phase-intro">${block.intro}</div>`);
+  const list = document.createElement("div");
+  list.className = "items";
+  body.appendChild(list);
+
+  block.items.forEach((it, i) => {
     const key = "p" + n + "-i" + i;
-    const isOn = key in state ? state[key] : it[4] === "done";
+    const row = document.createElement("div");
+    row.className = "item" + (isDone(key, it) ? " done" : "") + (it[3] === "quick" ? " is-quick" : "");
+    row.dataset.key = key;
     const tag = TAGS[it[3]] ? `<span class="tag">${TAGS[it[3]]}</span>` : "";
     const src = it[2] ? `<p class="item-src">Source: ${it[2]}</p>` : "";
-    return `<label class="item ${isOn ? "done" : ""}" data-key="${key}">
-      <input type="checkbox" ${isOn ? "checked" : ""}>
-      <div class="item-body"><p class="item-title">${it[0]}${tag}</p><p class="item-desc">${it[1]}</p>${src}</div>
-    </label>`;
-  }).join("");
-  phase.innerHTML = `
-    <div class="phase-head">
-      <div class="phase-num">${block.icon}</div>
-      <div class="phase-titles"><h2>${block.title}</h2><p>${block.time}</p></div>
-      <div class="phase-count">${block.items.length} steps</div>
-      <div class="chevron">▼</div>
-    </div>
-    <div class="phase-body">${introHtml}${itemsHtml}</div>`;
-  phasesEl.appendChild(phase);
-  toggleOnHead(phase);
-  phase.querySelectorAll(".item").forEach(row => {
-    const cb = row.querySelector("input");
-    cb.addEventListener("change", () => {
-      state[row.getAttribute("data-key")] = cb.checked;
-      row.classList.toggle("done", cb.checked);
+    row.innerHTML = `
+      <button class="cb" type="button" aria-label="Mark done"></button>
+      <div class="item-body">
+        <p class="item-title">${it[0]}${tag}</p>
+        <button class="more" type="button">Show details ▾</button>
+        <div class="item-detail" hidden><p class="item-desc">${it[1]}</p>${src}</div>
+      </div>`;
+    const setCb = () => { row.querySelector(".cb").innerHTML = row.classList.contains("done") ? "✓" : ""; };
+    setCb();
+    row.querySelector(".cb").addEventListener("click", () => {
+      const on = !row.classList.contains("done");
+      state[key] = on;
+      row.classList.toggle("done", on);
+      setCb();
       save();
-      updateProgress();
+      refresh();
     });
+    const more = row.querySelector(".more");
+    const det = row.querySelector(".item-detail");
+    const showDetail = open => { det.hidden = !open; more.textContent = open ? "Hide details ▴" : "Show details ▾"; };
+    more.addEventListener("click", () => showDetail(det.hidden));
+    row.querySelector(".item-title").addEventListener("click", () => showDetail(det.hidden));
+    row._open = showDetail;
+    list.appendChild(row);
+    steps.push({ key, title: it[0], phase, row });
   });
+  phase._list = list;
 });
 
+function refresh() {
+  let done = 0;
+  phasesEl.querySelectorAll(".phase.has-steps").forEach(phase => {
+    const rows = [...phase._list.children];
+    const d = rows.filter(r => r.classList.contains("done")).length;
+    done += d;
+    const c = phase.querySelector(".phase-count");
+    c.textContent = d + "/" + rows.length;
+    c.classList.toggle("all-done", d === rows.length);
+    let shown = 0;
+    rows.forEach(r => {
+      const show = filter === "all" || (filter === "todo" && !r.classList.contains("done")) ||
+        (filter === "quick" && r.classList.contains("is-quick") && !r.classList.contains("done"));
+      r.hidden = !show;
+      if (show) shown++;
+    });
+    phase.classList.toggle("filtered-empty", filter !== "all" && shown === 0);
+  });
+  const total = steps.length;
+  document.getElementById("total").textContent = total;
+  document.getElementById("stepCount").textContent = total;
+  document.getElementById("done").textContent = done;
+  document.getElementById("fill").style.width = total ? (done / total * 100) + "%" : "0%";
+
+  const next = steps.find(s => !s.row.classList.contains("done"));
+  const nx = document.getElementById("next");
+  if (next) {
+    nx.hidden = false;
+    nx.querySelector(".next-phase").textContent = "Phase " + next.phase.querySelector(".phase-num").textContent + " · " + next.phase.querySelector("h2").textContent;
+    nx.querySelector(".next-title").innerHTML = next.title;
+    nx._target = next;
+  } else nx.hidden = true;
+}
+
+document.getElementById("next").addEventListener("click", () => {
+  const t = document.getElementById("next")._target;
+  if (!t) return;
+  phasesEl.querySelectorAll(".phase.open").forEach(p => p.classList.remove("open"));
+  t.phase.classList.add("open");
+  t.row._open(true);
+  setTimeout(() => t.row.scrollIntoView({ behavior: "smooth", block: "center" }), 60);
+  t.row.classList.add("flash");
+  setTimeout(() => t.row.classList.remove("flash"), 1600);
+});
+
+document.querySelectorAll(".fb").forEach(b => b.addEventListener("click", () => {
+  filter = b.dataset.f;
+  document.querySelectorAll(".fb").forEach(x => x.classList.toggle("on", x === b));
+  refresh();
+}));
+
 document.getElementById("phaseCount").textContent = idx;
-const open = phasesEl.querySelectorAll(".phase.has-steps");
-if (open[1]) open[1].classList.add("open"); else if (open[0]) open[0].classList.add("open");
-updateProgress();
+refresh();
