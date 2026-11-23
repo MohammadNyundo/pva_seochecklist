@@ -1,37 +1,41 @@
-/* Prolific VA — GEO & SEO checklist (revised 12 Oct 2026 with Day-0 run-1 data)
-   Item = [title, description, source (optional), tag (optional: "num"), done ("done" = ticked by default)] */
+/* Prolific VA — GEO & SEO checklist (rebuilt 23 Nov 2026 from the SEO Stuff emails, 4 Sep–20 Nov 2026)
+   Goal: Prolific VA is the name Google and AI give when travel, tourism and hospitality businesses in Diani
+   look for digital marketing, a website or software. What we sell: found, trusted, booked.
+   Item = [title, description, source (optional), tag (optional: "quick"), done ("done" = ticked by default)] */
 
 /* "*" marks the monthly core prompts. How-to prompts (M2, W2) are judged on being cited, not named. */
 const PROMPTS = [
-  ["Digital marketing", [
+  ["Get found: digital marketing", [
     "*Who does SEO for hotels and tour operators in Diani?",
     "*How do I get my hotel to show up on ChatGPT and Google?",
     "*Who offers digital marketing for travel, tourism and hospitality businesses in Diani?",
     "How much does digital marketing for a hotel in Kenya cost?",
     "Best digital marketing company for tour operators in Kenya",
     "Is SEO worth it for a small guest house in Diani?"]],
-  ["Websites", [
-    "*Who builds websites for hotels and tour operators in Diani?",
-    "*How much does a business website cost in Kenya?",
+  ["Get trusted: websites", [
+    "*Who builds websites for hotels, villas and tour operators in Diani?",
+    "*How much does a hotel website cost in Kenya?",
     "Website with online booking and M-Pesa payment for a Kenyan hotel",
+    "Do I need my own website if I'm on Booking.com and Airbnb?",
     "Best web developer on the Kenyan coast for tourism businesses"]],
-  ["Safina MIS", [
+  ["Get booked: Safina MIS", [
     "*Hotel booking software in Kenya for a small guest house",
     "*Alternative to Booking.com for direct bookings in Kenya",
     "ResRequest alternative for small Kenyan hotels",
     "How do I stop double bookings at my guest house?"]],
-  ["Jahazi POS", [
+  ["Get booked: Jahazi POS", [
     "*POS system in Kenya with KRA eTIMS and M-Pesa",
-    "*POS software for a shop with walk-in, online and field sales",
-    "POS for a furniture, jewellery or interior design shop in Kenya",
+    "*POS for a restaurant or beach bar in Diani",
+    "POS software for a shop with walk-in, online and field sales",
     "POS with an e-menu for a restaurant in Kenya"]],
   ["Brand check", [
     "What is Prolific VA?",
-    "Is Prolific VA legit? Any reviews?"]]
+    "Is Prolific VA legit? Any reviews?",
+    "Who are the best software developers in Diani?"]]
 ];
 
 const RESULTS_HTML = `
-<div class="phase-intro">Run 1 on ChatGPT (10 and 12 Oct), Gemini and Google AI Mode (12 Oct). One run each, so treat it as a first reading, not a rate.</div>
+<div class="phase-intro">Where Prolific VA stands today. The October AI test was one run per tool, so treat it as a first reading, not a rate. Search numbers are from the Search Console and Bing exports to 21 Nov 2026.</div>
 <div class="res-wrap"><table class="res-table">
 <tr><th>Prompt</th><th>ChatGPT</th><th>Gemini</th><th>Google AI Mode</th></tr>
 <tr><td>M1 SEO for hotels and tour operators</td><td class="n">N on 10 Oct · <span class="y">Y, 1st of 8 on 12 Oct</span></td><td class="y">Y, 1st of 8</td><td class="y">Y, 1st of 6 (M3 wording), linked</td></tr>
@@ -44,17 +48,27 @@ const RESULTS_HTML = `
 <tr><td>B2 Is it legit? Reviews?</td><td class="n">Y, leans on Clutch (Ukunda, no reviews)</td><td class="y">Y, correct</td><td class="y">Y, quotes Liz and Julius</td></tr>
 <tr class="res-score"><td>Named on recommendation prompts</td><td>1 of 7</td><td>3 of 6</td><td>2 of 6</td></tr>
 </table></div>
+<div class="res-wrap"><table class="res-table">
+<tr><th>Search (3 months to 21 Nov 2026)</th><th>Number</th></tr>
+<tr><td>Google clicks / impressions</td><td>19 / 314 (Sep 65 · Oct 125 · Nov 1–21 118)</td></tr>
+<tr><td>Searches for our name ('prolific va')</td><td>7 clicks / 47 impressions, position 1.45</td></tr>
+<tr><td>Searches for Prolific.com landing on us</td><td class="n">about 86 impressions (27%)</td></tr>
+<tr><td>Non-branded buyer searches (e.g. 'web design Diani')</td><td class="n">none yet</td></tr>
+<tr><td>Bing clicks / impressions</td><td class="n">0 / 3</td></tr>
+<tr><td>Bing pages indexed (23 Nov)</td><td class="n">3 of 7: visibility, websites, Safina, Jahazi skipped after a redirect in October</td></tr>
+<tr><td>Google impressions by page</td><td>home 257 · work 47 · Diani report 24 · websites 21 · visibility 17 · Jahazi 11 · Safina 4</td></tr>
+</table></div>
 <div class="res-cols">
   <div><h3>Who AI names instead</h3><p>Marketing and websites: Goldfish Marketing, Zuchi Technologies, Kenya SEO Experts, SuperTech Nomads, SEO Kenya Limited, Donvic Marketing, Black Shepherd, Talk Digital. Safina: TENari, Microstation, Diafa PMS, NightsBridge, ReservePort (Pesapal), Kiotapay, Frontdesko, Little Hotelier. Jahazi: Veira, Cute Profit POS, Retaela, WIK POS, NodePoint.</p></div>
   <div><h3>Domains it cites</h3><p>Rivals' own sites, plus pesapal.com, kiotapay.com, theafricanhotelier.com, kenyageographic.com, clutch.co and linkedin.com. prolificva.co.ke was linked only on brand checks (Google AI Mode).</p></div>
 </div>
 <ol class="res-list">
   <li><b>Digital marketing is the strongest line.</b> Named first by Gemini, by ChatGPT on 12 Oct, and by AI Mode.</li>
-  <li><b>Jahazi is invisible: 0 of 6.</b> AI Mode said it is in a 'launching soon' status, so it listed live products. That is the wording on your own pages.</li>
-  <li><b>Answers vary.</b> ChatGPT left you out of M1 on 10 Oct and put you first on 12 Oct. That is why each prompt needs 3 runs.</li>
-  <li><b>ChatGPT misreads who you are.</b> It confused you with Prolific.com and cited a Clutch page showing Ukunda and no reviews.</li>
-  <li><b>You are named but rarely linked.</b> Several 'cited Y' rows list no prolificva.co.ke domain, so re-check them.</li>
-  <li><b>AI groups rivals by category.</b> Gemini put Safina under 'Regional and Local Direct Booking Engines'. Comparison pages against the names above give it something to lift.</li>
+  <li><b>Websites, Safina and Jahazi are barely named.</b> Jahazi was 0 of 6, and AI Mode called it 'launching soon'.</li>
+  <li><b>Nobody finds us yet without our name.</b> Every Google click came from a search for Prolific VA or Prolific.com. That's the gap this checklist closes.</li>
+  <li><b>ChatGPT and Copilot read Bing, and Bing barely sees us.</b> 3 impressions, 4 sales pages not indexed.</li>
+  <li><b>ChatGPT misreads who we are.</b> It confused us with Prolific.com and cited a Clutch page with Ukunda and no reviews.</li>
+  <li><b>Answers vary run to run.</b> ChatGPT left us out of M1 on 10 Oct and put us first on 12 Oct, so every prompt needs 3 runs.</li>
 </ol>`;
 
 const DATA = [
@@ -62,133 +76,165 @@ const DATA = [
   { results: true },
 
   {
-    icon: "0", title: "Number and baseline", time: "Number done. Baseline run 1 done, runs 2 and 3 to go",
-    intro: "The new line is registered. Keep proving it, finish the record and finish the baseline.",
+    icon: "0", title: "Only say what's real", time: "Done 23 Nov · keep it that way",
+    intro: "An owner can check any claim on your phone in front of them, and so can AI. A small true number beats a big invented one.",
     items: [
-      ["Register the new business line", "Registered (0182927998). Still confirm the roles: new line for calls, and which line has WhatsApp. If the wa.me links now point at the new number, WhatsApp must be registered on it.", "Your call, given the Airtel problem", "", "done"],
-      ["Finish the master business record", "Known: name 'Prolific VA', +254 182 927 998, prolificva.services@gmail.com, prolificva.co.ke, service areas, founder Mohammad Nyundo. Still needed: address exactly as in the Google Business Profile, hours, and the WhatsApp number. Add a plain description line: a digital marketing and software company in Diani, Kenya.", "BrightLocal local-AI study; Propellic finding 2"],
-      ["Verify no old number is left", "Run <code>grep -rnE '752 ?012 ?827|752012827|704 ?879 ?998' .</code> and <code>grep -rn '2540182\\|+254 0182' .</code>. The first should show only deliberate leftovers, the second nothing.", ""],
-      ["Day-0 baseline, run 1", "Done on ChatGPT, Gemini and Google AI Mode, 10 to 12 Oct 2026. Results are in the card above.", "BrightLocal", "", "done"],
-      ["Finish the baseline: runs 2 and 3, plus Bing and Copilot", "Fresh chat for every run, on a different day from run 1. Add Bing/Copilot, and Google Maps and organic checks for 'web design Diani' and 'hotel software Kenya'. The ChatGPT log was compiled inside one conversation, so re-check a few rows by hand. Do this in the next 2 to 3 days. Sitemap resubmission can go ahead now; hold content changes until runs 2 and 3 are logged.", "BrightLocal: a business that showed up once came back only about half the time"]
+      ["Remove every stat we can't back up", "Done 23 Nov 2026. The Palm &amp; Tide and Zanzitan marketing results had no data behind them, so their marketing cards, slides, Diani report boxes and llms.txt lines are gone. Both stay as websites we built. KweliAI's '355 Copilot citations' was replaced with the real Bing figures.", "", "", "done"],
+      ["Keep a proof folder for every number on the site", "One screenshot per claim, with its date: the KweliAI Bing AI citations report (67 in July to 313 in October 2026), KweliAI #1 on Google (9 Nov) and Bing (16 Nov) for its own name, the WTA 2024 award page. In a field visit the proof is two taps away.", "", "quick"],
+      ["Confirm the Safina and Jahazi numbers with the clients", "Kakamega Guest House (2x reservations, 100% live time) and New Glory (50% faster service, 2x customers a minute). Ask Julius and Baba Mwaniki to confirm in a WhatsApp message, or say what really changed. Keep what they confirm, reword what they don't.", "SEO Stuff, 22 Sep: checkable claims only"],
+      ["Get written approval for every client quote and name", "Liz (Palm &amp; Tide), Julius (Kakamega Guest House), Baba Mwaniki (New Glory), Ndurya (Mohaa Computers). A WhatsApp 'yes, you can publish this' with the exact text is enough.", "", "quick"],
+      ["Use the Diani award line only in its true form", "'Diani, voted Africa's Leading Beach Destination at the World Travel Awards 2024.' Zanzibar won in 2025 and 2026, so never write 'the best beach in Africa' as if it holds today.", "worldtravelawards.com, checked 23 Nov 2026", "", "done"],
+      ["Swap adjectives for facts", "'Proven', 'trusted' and 'industry-leading' can't be checked, so AI can't repeat them. Use named clients, what was built, dates, prices, timelines and integrations (eTIMS, M-Pesa Push).", "SEO Stuff, 22 Sep"]
+    ]
+  },
+
+  {
+    icon: "1", title: "Get our pages seen by Google and Bing", time: "This week",
+    intro: "ChatGPT and Copilot lean on Bing; Gemini and AI Mode read Google's index. Four of our seven sales pages aren't in Bing at all.",
+    items: [
+      ["Request indexing for the four pages Bing skipped", "Bing URL Inspection, 23 Nov: visibility.html, safina-mis.html, websites.html and jahazi-pos.html were crawled 17–29 Oct, saw a redirect and were never indexed. They load directly now. Click 'Request indexing' on each in Bing Webmaster Tools, and do the same in Google Search Console.", "Bing Webmaster Tools, 23 Nov", "quick"],
+      ["Add IndexNow so Bing hears about every change", "A key file at the site root, the sitemap URLs submitted once, then changed pages after each push. Copy the KweliAI setup (scripts/indexnow.sh and the GitHub workflow). Google doesn't use it, so keep requesting indexing there by hand.", "SEO Stuff: Bing feeds ChatGPT and Copilot", "quick"],
+      ["Confirm robots.txt allows every search and AI crawler", "GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and Bingbot. Don't add NOARCHIVE: it keeps content out of Copilot links. If DNS ever goes through Cloudflare, choose 'Disallow AI Training', never 'Block'.", "SEO Stuff, 14 and 21 Sep"],
+      ["Add Google Analytics 4 to every page", "The site has only Microsoft Clarity. Add GA4 with form_submit, whatsapp_click, tel_click and demo_request as key events, plus an 'AI channels' group (chatgpt.com, gemini.google.com, copilot.microsoft.com, perplexity.ai).", "", "quick"],
+      ["Ask 'How did you hear about us?' on the enquiry form", "Options: Google, ChatGPT, another AI tool, Instagram or Facebook, a client's website, a field visit, referral. For every visit credited to ChatGPT, more than 6 arrive later as a Google search, so analytics alone undercounts AI.", "Similarweb via SEO Stuff", "quick"],
+      ["Starting numbers recorded", "Search Console and Bing exports to 21 Nov 2026, in the card above. Fill a monthly column from January.", "", "", "done"]
     ]
   },
   {
     pause: true,
-    title: "Keep proving the new line",
-    body: "Keep making test calls from different networks while you work. A number that drops calls would repeat the Airtel problem on every page and profile."
+    title: "Leave the key pages alone until Google's core update settles",
+    body: "The November core update started 10 Nov and may run to 24 Nov. Fix indexing and tracking now, but hold content rewrites until the first clean week (ends about 1 Dec), so you can tell your changes apart from Google's."
   },
 
   {
-    icon: "1", title: "Quick wins from the Day-0 data", time: "Week 1. Biggest gaps first",
-    intro: "These come straight from run 1. They are small, and each one is aimed at a specific miss.",
+    icon: "2", title: "One name: Prolific VA, found, trusted, booked", time: "Weeks 1 to 3 · so Google and AI recognise us",
+    intro: "Models favour names they already connect with a category. Being described the same way everywhere matters more than rewording a page.",
     items: [
-      ["Resubmit the sitemap and page URLs", "You changed the site structure but never resubmitted. Update sitemap.xml first (all 8 pages, today's date in lastmod). In Search Console: submit the sitemap, then Request indexing for Jahazi, Safina, websites, visibility, the report, work and the homepage. Do the same in Bing Webmaster Tools. Gemini and AI Mode read Google's index; ChatGPT and Copilot lean on Bing. Log the date.", "Day-0 data; BrightLocal"],
-      ["Remove 'Launching soon' everywhere", "Homepage Jahazi card, work.html, any schema. Google AI Mode said Jahazi is 'launching soon' and listed live rivals instead. Jahazi was named in 0 of 6 runs across all tools.", "Day-0 data, AI Mode J1"],
-      ["Say plainly that Jahazi is live", "Put 'live at New Glory Enterprises' near the top, with the eTIMS and M-Pesa Push integration details, screenshots and what it does as plain text. Rivals win J1 and J2 because their pages state this.", "Day-0 data"],
-      ["Fix the Clutch listing and the LinkedIn page", "ChatGPT's B2 answer leaned on Clutch (shows Ukunda, no reviews) and LinkedIn. Make the address, phone, email and description match the master record, and ask a client for a Clutch review.", "Day-0 data, ChatGPT B2"],
-      ["Add one disambiguation line", "'Prolific VA is a digital marketing and software company in Diani, Kenya.' Put it in the About text, the schema description, llms.txt, Google Business Profile and every bio. ChatGPT mixed you up with the Prolific research platform; Gemini and AI Mode did not.", "Day-0 data, ChatGPT B1"],
-      ["Swap the number everywhere", "tel: links, WhatsApp links, call and demo strips, footers, enquiry pages, social bios.", "", "num", "done"],
-      ["Update the business JSON-LD", "Set telephone to +254182927998, add email, and add the second line as a contactPoint. Check sameAs, areaServed and the founder entry. Validate in Google's Rich Results Test.", "", "num"],
-      ["Reconcile prices and timelines into one source of truth", "Digital marketing is KSh 35,000 to 105,000 on the visibility FAQ but about 30,000 to 55,000 a month on the work FAQ; the websites meta description says 10 to 14 days while the FAQ says weeks; Safina and Jahazi say 14 to 30 days. Write one table and make every page, schema block and llms.txt match.", "SEO Stuff: state pricing in numbers"],
-      ["Remove every placeholder before it gets crawled", "Run <code>grep -rnE '[[]XX|[[]Add|[[]One-line|[[]Two sentences' *.html *.js</code>. The Safina results slides and the Jahazi takeaway still need real figures and approved quotes.", ""],
-      ["Make the enquiry promise consistent", "The modal and success message say 'within one business day'; the Reach Out sections say 'when we can'. Pick one.", ""]
+      ["Choose one sentence for who we are, and never reword it", "Proposed: 'Prolific VA is a digital marketing and software company in Diani, Kenya that gets travel, tourism and hospitality businesses found, trusted and booked.' Put it in schema, llms.txt, the About text, every bio, directory and pitch.", "'Popular Get More Popular' study via SEO Stuff; SEO Stuff, 14 Sep", "quick"],
+      ["Stop showing up for Prolific.com's searches", "About 86 of 314 Google impressions (27%) were people looking for Prolific, the research platform. Always write 'Prolific VA' in full in titles, H1s and profile names, never 'Prolific' alone, and add 'Is Prolific VA related to Prolific.com?' to the About FAQ.", "Search Console, 23 Nov", "quick"],
+      ["Make the site's structure say the offer in three words", "Found (digital marketing: visibility.html), trusted (websites: websites.html), booked (software: safina-mis.html, jahazi-pos.html). The home page, nav, llms.txt and schema should all use the same three words and link to the same pages.", ""],
+      ["Build an About page that tells the real story", "Who we are, why Diani, what we build and for whom. Founder Mohammad Nyundo with LinkedIn, the address exactly as on Google Business Profile, and the KweliAI result as our first discovery proof. Organization and Person schema, linked from every footer.", "Semrush: E-E-A-T +30.6%"],
+      ["Put a named author and date on every service page", "'By Mohammad Nyundo, Founder · updated [date]' under each H1 and a short author note at the end. Named authors went with 30% more AI citations.", "Semrush study via SEO Stuff", "quick"],
+      ["Make name, address and phone match everywhere", "Google Business Profile, Bing Places, Clutch, LinkedIn, Facebook, Instagram, TikTok, X and the site schema: same name, address, +254 182 927 998, email and the one sentence.", "BrightLocal local-AI study", "quick"],
+      ["Check what people find when they search our name", "After AI mentions a brand, most people search for it on Google. Check 'Prolific VA', 'Prolific VA reviews', 'Prolific VA Diani', 'Safina MIS' and 'Jahazi POS' on Google and Bing, and fix what's wrong, starting with Clutch (Ukunda, no reviews).", "Similarweb via SEO Stuff"],
+      ["Watch for ChatGPT's Business Hub opening to Kenya", "OpenAI's Business Hub (launched 10 Nov) lets only US local listings be claimed for now. If it opens to us, get every detail right first: published profiles can't be deleted.", "SEO Stuff, Nov"]
     ]
   },
 
   {
-    icon: "2", title: "Open the doors and fix the files", time: "Weeks 1 to 2",
-    intro: "Settings decide whether AI can see you. Content and authority decide whether it picks you.",
+    icon: "3", title: "Get found: make digital marketing the line AI names first", time: "Weeks 2 to 5",
+    intro: "This is already our strongest line. KweliAI is the proof that we know how to get a brand discovered, so this is where it belongs.",
     items: [
-      ["Confirm robots.txt still allows every search and AI crawler", "GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and Bingbot should all be allowed. Re-check after every edit.", "SEO Stuff, 21 Sep"],
-      ["If DNS ever goes through Cloudflare, never pick 'Block'", "Since 15 September 'Block' also blocks Googlebot, Applebot and Bingbot. To stop AI training and stay in Search choose 'Disallow AI Training'. The CNAME file suggests plain static hosting, so this may not apply. Confirm the DNS provider.", "SEO Stuff, 21 Sep"],
-      ["Decide the training question on purpose", "Three controls: training (Google-Extended), AI Overviews and AI Mode (a Search Console setting), and citations in ChatGPT, Claude and Perplexity (earned, no toggle). Recommendation: leave training open. Don't add NOARCHIVE: it keeps content out of Copilot links.", "SEO Stuff, 21 and 14 Sep"],
-      ["Trim the over-length titles and descriptions", "Titles (60 or fewer): work is 71, report 77, Safina 67. Try 'Our Work: Marketing, Websites & Systems | Prolific VA', 'AI Visibility for Diani Travel in 2026 | Prolific VA' and 'Safina MIS: Hotel Booking & Room Management | Prolific VA'. Descriptions (155 or fewer): visibility is 178, work 188, report 176.", ""],
-      ["Rewrite llms.txt for the current business", "Describe Prolific VA as a local digital marketing and software provider for travel, tourism and hospitality in Diani, list all 8 pages with one plain line each, and add the master record, founder and disambiguation line.", "SEO Stuff checklist, 21 Sep"],
-      ["Check canonical tags and schema on every page", "One canonical per page, including the report. Each FAQPage block must match the visible FAQ word for word. Don't spend a week on schema: the Semrush study measured visible structure, not markup.", "Semrush study via SEO Stuff, 10 Sep"]
-    ]
-  },
-  {
-    pause: true,
-    title: "Let the re-crawl settle: 1 to 2 weeks",
-    body: "Resubmitting does not index anything overnight. Google's September spam update was due to finish about 8 October, so ranking moves from here are easier to read, but judge on Search Console clicks and enquiries, not rank-tracker charts or impressions (Search Console began counting Lens and Circle to Search on 24 September with no backfill)."
-  },
-
-  {
-    icon: "3", title: "Build the pages AI picks from", time: "Weeks 2 to 5",
-    intro: "AI scores a piece of a page, roughly 375 words, under the heading above it. In run 1 it grouped rivals by category, so build pages that sit in those categories.",
-    items: [
-      ["Hotel booking software in Kenya: build the Safina comparison page", "Compare Safina MIS with the names AI actually listed: TENari, Microstation, Diafa PMS, NightsBridge, ReservePort (Pesapal), Kiotapay, Frontdesko, Little Hotelier. Add a direct-booking channels table: Pesapal links, WhatsApp payment links, Google free booking links, Airbnb, Booking.com. Replace the current ResRequest and Booking.com-only table. Rules: facts only from each vendor's own page, with a link and a 'checked' date; show where a rival is stronger; verify commission figures before publishing; refresh quarterly.", "Day-0 data, S1 and S2"],
-      ["POS in Kenya: build the Jahazi comparison page", "Compare Jahazi POS with Veira, Cute Profit POS, Retaela, WIK POS and NodePoint, plus Shopify or Odoo for the online side. Criteria: eTIMS, M-Pesa, field sales app, online store, offline use, price, support. Same rules as above. Link it from the Jahazi page.", "Day-0 data, J1 and J2"],
-      ["'How to choose' page for marketing and websites", "AI names agencies by local presence (Goldfish, Zuchi, Kenya SEO Experts, Donvic, Black Shepherd). A criteria table is safer than naming rivals: what to ask, what to expect on price and time, what proof to ask for, with Prolific VA's own answers.", "Day-0 data, M1 and W1"],
-      ["Get Safina named directly", "Gemini named Safina only indirectly on S1. Use the exact name 'Safina MIS' with a one-line definition at the top of the page and in schema.", "Day-0 data, Gemini S1"],
-      ["Turn the prompt bank into a question map", "For each service line, list what a buyer asks before choosing: price, alternatives, how long, what's included, what goes wrong. Add long queries from Search Console: Performance, 12 months, regex <code>^(?:\\S+\\s+){9,}\\S+$</code>. Under a dozen answered per line is a coverage gap.", "BrightLocal; Similarweb via SEO Stuff"],
-      ["Ten-minute test and answer-first on all service pages", "Pick the one question a buyer asks before booking a call. The answer should be under 375 words, make sense read cold, and sit under a heading that names the question. Put a one or two sentence direct answer at the top of each page and Q&A block.", "SEO Stuff, 23 Sep; Semrush: clarity +32.8%"],
-      ["Turn visibility.html's pillar headings into questions", "Pillars like 'Content with real depth and structure.' are statements. Add a question line above each.", "SEO Stuff, 23 Sep"],
-      ["Add a few genuinely different service and area pages", "The comparison pages above count towards a cap of 3 to 5 this cycle. Each needs first-party content: real prices, screenshots, a named case study. Don't clone pages by swapping town names.", "BrightLocal; SEO Stuff, 28 Sep"],
-      ["Make every claim checkable", "Figures, not adjectives: Palm & Tide +19.5% ChatGPT sessions, Kakamega Guest House 2x reservations, KweliAI's 355 Copilot citations, plus eTIMS and M-Pesa Push, timelines and policies in writing.", "SEO Stuff, 22 Sep"],
-      ["Finish the case studies and get quotes approved", "Fill the remaining Safina and Jahazi figures. Julius and Baba Mwaniki should approve their quotes in writing.", ""],
-      ["Put a named person on every page, and lean into local", "A visible 'By Mohammad Nyundo, Founder' with a LinkedIn link and a 'last updated' date. Use real photos of real clients and places, not stock.", "Semrush: E-E-A-T +30.6%; Propellic findings 2 and 5"]
+      ["Put the KweliAI result on the digital marketing page, in plain numbers", "Our own product, with no ad budget and no domain authority, went from 67 to 313 Bing AI citations a month (July to October 2026) and ranks #1 on Google and Bing for its own name. Screenshot next to each number, and say what it means for a Diani hotel or tour operator.", "Proof folder (phase 0)"],
+      ["Publish 'How to get your hotel recommended by ChatGPT and Google'", "The how-to version of M2. The method in plain steps (indexing, one name, answer-first pages, reviews, being named on other sites), with KweliAI as the worked example. How-to answers cite pages, not businesses, so this is how we get cited for M2.", "SEO Stuff, 23 Sep: ten-minute test"],
+      ["Answer 'How much does digital marketing for a hotel cost?' on the page", "Real ranges in KSh, what each package includes, how long before results show. Settle the conflicting prices first (visibility FAQ says 35,000 to 105,000; work FAQ about 30,000 to 55,000 a month).", "SEO Stuff: state pricing in numbers"],
+      ["Answer 'How long before AI starts naming my business?'", "Honest timeline: indexing in days, page changes in 2 to 4 weeks, reviews and mentions in 4 to 8 weeks, what a model already knows in months. Use KweliAI's dated numbers as the example.", ""],
+      ["Answer 'Is SEO worth it for a small guest house in Diani?'", "Who it's worth it for and who it isn't. Saying when not to hire us is the kind of plain answer AI repeats.", "SEO Stuff, 22 Sep"],
+      ["Keep the Diani report current", "ai-visibility-diani-2026.html is our second-best page (24 impressions, 3 clicks). Add a 'last updated' date, the November core update, Business Hub and the Bing note. Short LinkedIn and Medium versions that link back.", "Search Console, 23 Nov"]
     ]
   },
 
   {
-    icon: "4", title: "Make acting easy, for people and AI agents", time: "Weeks 3 to 4",
-    intro: "You can be recommended and still lose the enquiry if the path breaks.",
+    icon: "4", title: "Get trusted: websites owners can check", time: "Weeks 3 to 6",
+    intro: "AI named us 4th of 8 once for websites, and never on ChatGPT or Gemini. The page needs the facts AI lifts: price, time, what's included, real builds.",
     items: [
-      ["Run the 5-minute agent test", "Pick your highest-value action (request a demo). Could someone finish it using only what's public: what you do, where, what it costs, how to ask? Do it on a phone.", "SEO Stuff, 8 Sep"],
-      ["Test every enquiry path with the new number", "tel: opens the dialer, WhatsApp opens with the pre-filled message, the Formspree form delivers, the success message is right.", "", "num"],
-      ["Add 'How did you hear about us?' to the enquiry form", "Options: ChatGPT, Google, Gemini, referral, social, other. AI visits are often invisible in analytics, so asking is the cheapest attribution.", "SEO Stuff, 24 and 18 Sep"],
-      ["Publish terms as text, not PDFs", "Price ranges, what's included, timelines, support terms as plain page text.", "Propellic findings 5 and 8"],
-      ["Set up WhatsApp Business properly", "Greeting, away message with hours, quick replies with price ranges.", ""]
+      ["Answer 'Who builds websites for hotels, villas and tour operators in Diani?' in the first lines", "A bold one-sentence answer under a question heading at the top of websites.html: what we build, for whom, in Diani, how long, from what price.", "Semrush: clarity +32.8%"],
+      ["Publish real prices and timelines for websites", "One table: site type, what's included, KSh range, weeks to launch. The meta description says 10 to 14 days while the FAQ says weeks; make them match.", "SEO Stuff: state pricing in numbers"],
+      ["Show the sites we built, as facts", "Palm &amp; Tide, Zanzitan, Mohaa Computers, GoldenStar, EuroBuild: what each site does (booking, M-Pesa, WhatsApp, menus), with a link and a screenshot. No traffic or booking numbers we can't prove.", ""],
+      ["Answer 'Do I need my own website if I'm on Booking.com and Airbnb?'", "Commission costs, what owning the booking means, how M-Pesa direct booking works, and that AI told 71% of travellers in Propellic's study to book direct when a direct option existed.", "Propellic via SEO Stuff"],
+      ["Add a 'Website by Prolific VA' credit on client sites", "A small footer link with plain wording on Palm &amp; Tide, Zanzitan, Mohaa Computers, GoldenStar and EuroBuild. Each one is a site with no stake in our success naming us.", "SEO Stuff checklist, 21 Sep", "quick"],
+      ["Make photos findable by Google Lens", "Real img tags, descriptive file names (hotel-website-diani-booking.webp), specific alt text and text near each image. Search Console now counts Lens and Circle to Search.", "SEO Stuff, 28 Sep", "quick"]
+    ]
+  },
+
+  {
+    icon: "5", title: "Get booked: Safina MIS and Jahazi POS", time: "Weeks 4 to 8",
+    intro: "AI groups rivals by category. Pages that sit in those categories, with fair comparisons, give it something to lift.",
+    items: [
+      ["Remove 'launching soon' and say plainly that Jahazi is live", "Live at New Glory Enterprises, with eTIMS and M-Pesa Push, screenshots and what it does as plain text near the top. AI Mode listed live rivals instead because our pages said 'launching soon'.", "Day-0 data, AI Mode J1", "quick"],
+      ["Build the Jahazi POS comparison page", "Compare fairly with Veira, Cute Profit POS, Retaela, WIK POS and NodePoint: eTIMS, M-Pesa, field sales, online store, offline use, price, support. Vendor facts dated and linked; say where a rival fits better.", "Day-0 data, J1 and J2"],
+      ["Add a restaurant and beach bar section to Jahazi", "Diani's restaurants and bars are hospitality buyers too. E-menu, M-Pesa at the table, eTIMS receipts, end-of-day report.", ""],
+      ["Keep the Safina comparison honest and dated", "Compare with the names AI listed: TENari, Microstation, Diafa PMS, NightsBridge, ReservePort, Kiotapay, Frontdesko, Little Hotelier. A 'checked on' date per vendor, re-checked quarterly, and a line saying Prolific VA built Safina MIS.", "Day-0 data, S1 and S2"],
+      ["Get 'Safina MIS' named directly", "Gemini named it only indirectly. Use the exact name with a one-line definition at the top of the page, in schema and in llms.txt: 'Safina MIS is hotel booking and room management software for small hotels and guest houses in Kenya, built by Prolific VA.'", "Day-0 data, Gemini S1"],
+      ["Answer 'How do I stop double bookings at my guest house?'", "A plain how-to with Safina as one of the answers, under 375 words, readable cold.", "SEO Stuff, 23 Sep"],
+      ["Get Safina listed where AI looks for booking software", "AI cited pesapal.com and kiotapay.com for booking-software questions. Ask Pesapal about an integration or partner listing.", "Day-0 data"]
     ]
   },
   {
     pause: true,
-    title: "Give changes 2 to 4 weeks, then re-run",
-    body: "Retrieval can pick up a changed page after it is crawled, so wait 2 to 4 weeks, then re-run the six recommendation prompts. First check whether AI Mode still says Jahazi is 'launching soon'. Being in what a model already knows is slower and follows model releases, so allow months."
+    title: "Give page changes 2 to 4 weeks, then re-run the prompts",
+    body: "Retrieval can pick up a changed page after it's crawled, so wait 2 to 4 weeks, then re-run the core prompts 3 times each. Don't rewrite again in between: one week is too small a change to move any answer."
   },
 
   {
-    icon: "5", title: "Build evidence outside your own site", time: "Weeks 4 to 10",
-    intro: "A claim on your homepage is a claim. The same claim confirmed by someone with no stake in your success is a fact.",
+    icon: "6", title: "Write every sales page the way AI reads it", time: "Ongoing, one page at a time",
+    intro: "AI scores a piece of a page, roughly 375 words, under the heading above it. Improve the pages that sell before writing new ones.",
     items: [
-      ["Work the citation list from your own logs", "Targets from run 1: theafricanhotelier.com (cited for M3), kenyageographic.com (S2), pesapal.com (S1 and S2), clutch.co and linkedin.com (B2). Pitch a guest piece or a mention, and ask to be included where lists are published. Add the domains from runs 2 and 3 and from Bing.", "Day-0 data; BrightLocal"],
-      ["Get into the 'best of' lists AI reads", "Many answers came from list-style articles and vendor blogs. Find the lists for 'hotel booking software Kenya' and 'POS Kenya', and ask to be included on merit. Don't pay for placement.", "Day-0 data"],
-      ["Finish and verify the Google Business Profile", "If verification is pending, wait: up to 5 business days after video review, no resubmitting, no second listing. Once verified, set category, service areas, services, photos and description, then make the new number primary and Airtel an additional line.", "BrightLocal", "num"],
-      ["Claim Bing Places", "Same master record. ChatGPT and Copilot lean on Bing.", "BrightLocal"],
-      ["Collect named reviews", "Ask Julius (Kakamega Guest House), Liz (Palm & Tide), Baba Mwaniki (New Glory) and Ndurya (Mohaa Computers) for a Google review and a Clutch review. Gemini and AI Mode already quote Liz and Julius, so reviews do get used.", "Propellic finding 5; Day-0 data"],
-      ["Add 'Built by Prolific VA' links on client sites", "A small footer credit with descriptive, varied anchor text on Mohaa, EuroBuild, GoldenStar, Palm & Tide, Zanzitan and the others you control.", "SEO Stuff checklist, 21 Sep"],
-      ["Publish the report beyond your site", "Short LinkedIn and Medium versions of the Diani report that link back and credit Propellic.", "Your KweliAI case study"],
-      ["Be in the conversations where owners ask", "Hospitality owners' Facebook and WhatsApp groups and LinkedIn. Answer plainly and don't pitch.", "Propellic: travelers verify on forums"],
-      ["Describe yourself the same way everywhere", "'Local digital marketing and software provider for travel, tourism and hospitality in Diani.' Don't re-word the positioning every few months.", "SEO Stuff, 14 Sep"]
+      ["Turn the prompt bank into a question map", "For each line (found, trusted, booked), list what an owner asks before hiring: cost, time, what's included, how it compares, what goes wrong. Add questions from enquiries, field visits, WhatsApp and long Search Console queries (Performance, 12 months, regex <code>^(?:\\S+\\s+){9,}\\S+$</code>).", "BrightLocal; Similarweb via SEO Stuff"],
+      ["Question headings, bold answer first, under 375 words", "On home, visibility, websites, Safina, Jahazi and work: each H2 names a question, the first sentence answers it, the section makes sense read on its own.", "SEO Stuff, 23 Sep; Semrush: clarity +32.8%"],
+      ["Add a 'What we don't do' section to each service page", "Who we're not right for. It makes the rest more believable, to owners and to AI.", "SEO Stuff, 22 Sep"],
+      ["Make each FAQPage schema match the visible FAQ word for word", "One canonical per page. Don't spend a week on schema: the Semrush study measured visible structure, not markup.", "Semrush via SEO Stuff, 10 Sep"],
+      ["Trim over-length titles and descriptions", "Titles 60 characters or fewer, descriptions 155 or fewer, with 'Prolific VA' and 'Diani' in each.", "", "quick"],
+      ["Rewrite llms.txt around found, trusted, booked", "The one sentence, the three lines with one plain sentence and link each, the founder, the address, and the proof: KweliAI's numbers and the sites and systems we built.", "SEO Stuff checklist, 21 Sep", "quick"],
+      ["No templated area pages", "Ukunda, Kwale, Watamu or Malindi pages only when we have real work there. Cloned pages with the town swapped are what the September spam update targeted.", "SEO Stuff, 28 Sep"],
+      ["Log every change with its baseline and check date", "Date, page, change, which rule it follows, the numbers that day, a check date 4 weeks later. Same method as KweliAI.", ""]
+    ]
+  },
+
+  {
+    icon: "7", title: "Field sales: the site in your hand", time: "Before every visit",
+    intro: "The site is what you show an owner across the desk. It should feel like it was made for their business.",
+    items: [
+      ["Make the site fast and readable on a phone on mobile data", "The service pages, the work page, the Diani report and the comparisons must load quickly on Safaricom data and read well on a small screen.", "", "quick"],
+      ["Tell the story in one breath", "'We get travel, tourism and hospitality businesses in Diani, voted Africa's Leading Beach Destination in 2024, found, trusted and booked: digital marketing to get you found, a website and real reviews to get you trusted, and software to get you booked.' Every part has proof behind it.", ""],
+      ["Show them their own AI answer", "Before the visit, ask ChatGPT and Gemini 'best [their type of business] in Diani' and screenshot it. Showing an owner whether they appear, and who appears instead, makes it about their business.", "", "quick"],
+      ["Run the 5-minute test: can they hire us from their phone?", "After you leave, can the owner get a quote or book a demo using only what's public? Tel, WhatsApp and the form must work, and the reply-time promise must match everywhere ('one business day' vs 'when we can').", "SEO Stuff, 8 Sep", "quick"],
+      ["Give 'book a demo' and 'get a quote' clear pages", "Say what happens, how long it takes and what to prepare. Google is testing a top spot in AI answers for the one official page that finishes a task.", "SEO Stuff, Nov"],
+      ["Set up WhatsApp Business properly", "Greeting, away message with hours, quick replies with price ranges and links to the three service pages.", "", "quick"]
+    ]
+  },
+
+  {
+    icon: "8", title: "Get named outside our own site", time: "Weeks 2 to 12 · slow, start early",
+    intro: "A claim on our homepage is a claim. The same claim from someone with no stake in our success is a fact.",
+    items: [
+      ["Finish our Google Business Profile and claim Bing Places", "Category, services, service area (Diani, Ukunda, Kwale), photos of real work, the one sentence. Google's AI leans on the Business Profile (29% of local AI citations), and ChatGPT leans on Bing.", "BrightLocal", "quick"],
+      ["Collect Google and Clutch reviews from every client", "Liz (Palm &amp; Tide), Julius (Kakamega Guest House), Baba Mwaniki (New Glory), Ndurya (Mohaa Computers). Review count tracked closely with being named by AI, and AI already quotes Liz and Julius. Never buy or script them.", "Propellic; Day-0 data"],
+      ["List the pages AI cites for our prompts, then ask their authors", "From the baseline runs, list pages that name rivals but not us (theafricanhotelier.com, kenyageographic.com, 'best of' lists). Ask the author how they choose before asking to be added. Brands on more cited pages sit higher in ChatGPT's list. Never pay for placement.", "SEO Stuff, Nov; Day-0 data"],
+      ["List Prolific VA where agencies are compared", "Clutch (fix first), GoodFirms, DesignRush, Kenyan business directories, and coast hotel and tourism associations' supplier lists if they publish them.", ""],
+      ["Pitch the story to Kenyan tech and tourism media", "'A Diani company building marketing, websites and booking software for coast hospitality, with its own product cited by Bing's AI.' Techweez, TechCabal, Kenyan hospitality and tourism outlets.", ""],
+      ["Post real work on Instagram, Facebook and LinkedIn", "Meta AI searches posts from 2025 on and prefers first-person posts. Post what we build in owners' words, and ask clients to post about their new site or system.", "SEO Stuff, Nov"],
+      ["Answer in the places owners ask each other", "Hospitality owners' Facebook and WhatsApp groups and LinkedIn. Answer plainly, don't pitch.", "Propellic"]
     ]
   },
   {
     pause: true,
     title: "Authority is slow: allow 4 to 8 weeks",
-    body: "Our rule of thumb, not from a study: new reviews, links and mentions take roughly 4 to 8 weeks to show in answers. Don't re-test weekly; one week is too small a change to move any answer."
+    body: "Our rule of thumb, not from a study: new reviews, links and mentions take roughly 4 to 8 weeks to show in answers. Don't re-test weekly."
   },
 
   {
-    icon: "6", title: "Measure what matters, then repeat", time: "Monthly, never weekly",
-    intro: "The question is no longer 'how much AI traffic', it's 'were we recommended'.",
+    icon: "9", title: "Measure what matters, then repeat", time: "Monthly, from January 2027",
+    intro: "The question isn't 'how much AI traffic', it's 'were we recommended, and did owners get in touch'.",
     items: [
-      ["Run the monthly prompt test", "Use the gold core prompts across ChatGPT, Gemini, Google AI Mode, Bing/Copilot and Perplexity, 3 runs each, a fresh chat every time. Log named, cited, position, rivals and domains. Your number is the named rate, shown per tool and per service line.", "SEO Stuff, 24 and 18 Sep; BrightLocal"],
-      ["Score the two prompt types differently", "Recommendation prompts (M1, M3, W1, S1, S2, J1, J2): track the named rate. How-to prompts (M2, W2): no businesses are named, so track whether prolificva.co.ke is cited.", "Day-0 data"],
-      ["Keep the log trustworthy", "Fresh chat per run, the prompt pasted exactly, no follow-ups. A 'cited Y' needs the domain written in the log. Spot-check a few rows by hand each month.", "Day-0 data"],
-      ["Check Google two ways", "Maps and AI answers differ. Maps named a business in 66% of searches against about 33% in ChatGPT. Track both for 'web design Diani' and 'hotel software Kenya'.", "BrightLocal"],
-      ["Search Console and Bing, page by page", "Track the newest pages separately. Use clicks and enquiries, not impressions or third-party rank trackers.", "SEO Stuff, 28 Sep"],
-      ["Count enquiries by source", "Use the new form field and ask on calls. Compare month to month against Day-0.", ""],
-      ["Re-test after each major AI model release", "A release can reset what a model knows. Re-run the prompt bank within 2 to 4 weeks of a big one.", "SEO Stuff, 14 Sep"]
+      ["Run the monthly prompt test", "The gold core prompts on ChatGPT, Gemini, Google AI Mode, Copilot and Perplexity, 3 runs each, a fresh chat every time. Log named, cited, position, rivals and domains. 7 in 10 businesses AI names show up on only one assistant, so never judge from one tool.", "BrightLocal; SEO Stuff"],
+      ["Score the two prompt types differently", "Recommendation prompts: track the named rate per line. How-to prompts (M2, W2): no businesses are named, so track whether prolificva.co.ke is cited.", "Day-0 data"],
+      ["Watch for our first non-branded searches", "The real sign we're being found: impressions for 'web design Diani', 'hotel software Kenya', 'digital marketing Diani' and similar. Today there are none.", "Search Console, 23 Nov"],
+      ["Watch branded searches next to AI referrals", "If 'prolific va' searches rise while AI referrals stay flat, AI is probably sending people through Google.", "Similarweb via SEO Stuff"],
+      ["Check Search Console's Generative AI report", "AI Overview and AI Mode impressions by page. Ignore 9–11 Nov 2026 (logging error).", "SEO Stuff, Nov", "quick"],
+      ["Count enquiries and signed clients by source", "Form field, call notes and field visits. The number that matters is travel, tourism and hospitality clients signed in Diani.", ""],
+      ["Re-test after each major AI model release", "A release can change what a model knows. Re-run the prompt bank within 2 to 4 weeks of a big one.", "SEO Stuff, 14 Sep"]
     ]
   }
 ];
 
 const phasesEl = document.getElementById("phases");
-const KEY = "pva-geo-checklist-v3";
+const KEY = "pva-geo-checklist-v5";
+const TAGS = { quick: "Quick win" };
 let idx = 0;
-const state = JSON.parse(localStorage.getItem(KEY) || "{}");
-function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 
 function updateProgress() {
   const boxes = document.querySelectorAll(".item input[type=checkbox]");
@@ -210,7 +256,7 @@ function infoCard(num, title, sub, count, bodyHtml) {
     <div class="phase-head">
       <div class="phase-num">${num}</div>
       <div class="phase-titles"><h2>${title}</h2><p>${sub}</p></div>
-      <div class="phase-count">${count}</div><div class="chevron">\u25bc</div>
+      <div class="phase-count">${count}</div><div class="chevron">▼</div>
     </div>
     <div class="phase-body">${bodyHtml}</div>`;
   phasesEl.appendChild(phase);
@@ -222,7 +268,7 @@ DATA.forEach(block => {
   if (block.pause) {
     const p = document.createElement("div");
     p.className = "pause" + (block.gate ? " gate" : "");
-    p.innerHTML = `<div class="pause-icon">${block.gate ? "\u26d4" : "\u23f8"}</div><div class="pause-body"><b>${block.title}</b><p>${block.body}</p></div>`;
+    p.innerHTML = `<div class="pause-icon">${block.gate ? "⛔" : "⏸"}</div><div class="pause-body"><b>${block.title}</b><p>${block.body}</p></div>`;
     phasesEl.appendChild(p);
     return;
   }
@@ -231,8 +277,8 @@ DATA.forEach(block => {
     const total = PROMPTS.reduce((n, g) => n + g[1].length, 0);
     const groups = PROMPTS.map(g => `<div class="prompt-group"><h3>${g[0]}</h3><ol>${
       g[1].map(q => `<li${q.startsWith("*") ? ' class="core"' : ""}>${q.replace(/^\*/, "")}</li>`).join("")}</ol></div>`).join("");
-    const phase = infoCard("?", "The prompt bank", "What owners type. Gold markers are the monthly core set", total + " prompts",
-      `<div class="phase-intro">Phrased the way owners ask. How-to prompts (M2 and W2) never name businesses, so judge them on whether you are cited. Add real questions from enquiries and Search Console over time.</div>
+    const phase = infoCard("?", "The prompt bank", "What owners type when they look for help. Gold markers are the monthly core set", total + " prompts",
+      `<div class="phase-intro">Phrased the way hotel, villa, tour and restaurant owners in Diani ask. How-to prompts (M2 and W2) never name businesses, so judge them on whether we are cited. Add real questions from enquiries, field visits and Search Console over time.</div>
        ${groups}
        <div class="prompt-tools"><button class="copy-btn" type="button">Copy all prompts</button><span class="copy-msg"></span></div>`);
     phase.querySelector(".copy-btn").addEventListener("click", () => {
@@ -243,18 +289,18 @@ DATA.forEach(block => {
   }
 
   if (block.results) {
-    infoCard("\u2713", "Day-0 results, run 1", "10 to 12 Oct 2026 · ChatGPT, Gemini, Google AI Mode", "read this first", RESULTS_HTML);
+    infoCard("✓", "Where we stand today", "AI test Oct 2026 · Search Console and Bing to 21 Nov 2026", "read this first", RESULTS_HTML);
     return;
   }
 
-  idx++;
+  const n = idx++;
   const phase = document.createElement("div");
   phase.className = "phase has-steps";
   const introHtml = block.intro ? `<div class="phase-intro">${block.intro}</div>` : "";
   const itemsHtml = block.items.map((it, i) => {
-    const key = "p" + idx + "-i" + i;
+    const key = "p" + n + "-i" + i;
     const isOn = key in state ? state[key] : it[4] === "done";
-    const tag = it[3] === "num" ? '<span class="tag">Needs new number</span>' : "";
+    const tag = TAGS[it[3]] ? `<span class="tag">${TAGS[it[3]]}</span>` : "";
     const src = it[2] ? `<p class="item-src">Source: ${it[2]}</p>` : "";
     return `<label class="item ${isOn ? "done" : ""}" data-key="${key}">
       <input type="checkbox" ${isOn ? "checked" : ""}>
@@ -266,7 +312,7 @@ DATA.forEach(block => {
       <div class="phase-num">${block.icon}</div>
       <div class="phase-titles"><h2>${block.title}</h2><p>${block.time}</p></div>
       <div class="phase-count">${block.items.length} steps</div>
-      <div class="chevron">\u25bc</div>
+      <div class="chevron">▼</div>
     </div>
     <div class="phase-body">${introHtml}${itemsHtml}</div>`;
   phasesEl.appendChild(phase);
