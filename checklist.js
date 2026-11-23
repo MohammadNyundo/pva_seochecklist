@@ -101,13 +101,39 @@ const DATA = [
     ]
   },
   {
-    pause: true,
-    title: "Leave the key pages alone until Google's core update settles",
-    body: "The November core update started 10 Nov and may run to 24 Nov. Fix indexing and tracking now, but hold content rewrites until the first clean week (ends about 1 Dec), so you can tell your changes apart from Google's."
+    icon: "2", title: "Field-sales kit, ready before the pause", time: "This week · so you can go out now",
+    intro: "The site is what you show an owner across the desk. It should feel like it was made for their business, and it has to work on your phone today.",
+    items: [
+      ["Make the site fast and readable on a phone on mobile data", "Open home, visibility, websites, Safina, Jahazi, work and the Diani report on your own phone on Safaricom data. Anything slow, cut off or hard to tap gets fixed first.", "", "quick"],
+      ["Tell the story in one breath", "'We get travel, tourism and hospitality businesses in Diani, voted Africa's Leading Beach Destination in 2024, found, trusted and booked: digital marketing to get you found, a website and real reviews to get you trusted, and software to get you booked.' Every part has proof behind it.", ""],
+      ["Know which page to open for which owner", "Hotel or guest house: the Booking.com cost guide, then Safina. Restaurant or beach bar: the eTIMS guide, then Jahazi. Anyone who says 'nobody finds us': their own AI answer, then the ChatGPT guide and the KweliAI numbers. Tour operator or villa: websites and the ChatGPT guide.", "", "quick"],
+      ["Show them their own AI answer", "Before the visit, ask ChatGPT and Gemini 'best [their type of business] in Diani' and screenshot it. Showing an owner whether they appear, and who appears instead, makes it about their business.", "", "quick"],
+      ["Ask every owner what they last searched about their business", "Write it down word for word, with the date and type of business. These become the next pages and prompts. It's the data we don't have yet: Search Console shows no buyer searches so far.", "BrightLocal: build from real questions"],
+      ["Run the 5-minute test: can they hire us from their phone?", "After you leave, can the owner get a quote or book a demo using only what's public? Tel, WhatsApp and the form must work, and the reply-time promise must match everywhere ('one business day' vs 'when we can').", "SEO Stuff, 8 Sep", "quick"],
+      ["Set up WhatsApp Business properly", "Greeting, away message with hours, quick replies with price ranges and links to the service pages and the three guides.", "", "quick"]
+    ]
   },
 
   {
-    icon: "2", title: "One name: Prolific VA, found, trusted, booked", time: "Weeks 1 to 3 · so Google and AI recognise us",
+    icon: "3", title: "Pages wave 1: three guides owners already search for", time: "Build now, before the pause · new pages don't disturb the baseline",
+    intro: "Guides about the owner's problem, not ads for us. Each answers what they keep checking and ends with a link to the service that fixes it. Put them under /guides/ on prolificva.co.ke. Rules for every guide: question H1, the answer in the first two lines, sections under 375 words, real KSh figures, a 'checked on' date on every fee or rule, a byline, and a link to the official source.",
+    items: [
+      ["Guide 1: How much do Booking.com and Airbnb really cost a Diani hotel?", "Outline: the commission each platform takes (from their own partner pages, dated); a worked example in KSh for a 6-room guest house at Diani rates; what you lose besides money (the guest's contact, repeat bookings); how to move guests to direct booking without breaking platform rules; what AI tells travellers (71% told to book direct when an option existed). Ends with: a website that takes M-Pesa bookings, and Safina to manage them. Field use: every hotel and villa owner.", "Propellic via SEO Stuff; Safina comparison table"],
+      ["Guide 2: KRA eTIMS for hotels, restaurants and bars in Diani", "Outline: who must issue eTIMS invoices; what happens if you don't; the ways to comply (KRA's own tools vs an integrated POS); what an eTIMS receipt must show; common mistakes. Every rule from kra.go.ke, linked and dated, re-checked quarterly. Ends with: Jahazi POS, live at New Glory with eTIMS and M-Pesa Push. Field use: restaurants, bars, shops.", "kra.go.ke; Day-0 data: Jahazi 0 of 6"],
+      ["Guide 3: How to get your hotel recommended by ChatGPT and Google", "Outline: what AI reads (Google Business Profile, Bing, reviews, other sites, your own pages); the steps in order; how long each takes; how to check if you're named (the prompt test). KweliAI as the worked example with its real numbers: 67 to 313 Bing AI citations a month, #1 on Google and Bing for its name. Ends with: our digital marketing. Field use: anyone who says 'nobody finds us'.", "SEO Stuff, Sep–Nov; KweliAI data"],
+      ["Link each guide from its service page and the home page", "One plain line and link on visibility, websites, Safina and Jahazi. Adding a link isn't a rewrite, so it's fine before the pause.", "", "quick"],
+      ["Add the guides to the sitemap, llms.txt and IndexNow, then request indexing", "Google Search Console and Bing Webmaster Tools for each new URL, the same day it goes live.", "", "quick"],
+      ["Log each guide's launch date and starting numbers", "Date, URL, 0 impressions, 0 clicks, not cited. Add the guide's main question to the prompt bank so the monthly test checks if AI cites it.", ""]
+    ]
+  },
+  {
+    pause: true,
+    title: "Leave the existing pages alone until Google's core update settles",
+    body: "The November core update started 10 Nov and may run to 24 Nov. Fix indexing and tracking, go out with the field-sales kit and publish the wave 1 guides, but hold rewrites of existing pages until the first clean week (ends about 1 Dec). Then the guides have 2 to 4 weeks of their own data before wave 2."
+  },
+
+  {
+    icon: "4", title: "One name: Prolific VA, found, trusted, booked", time: "Weeks 1 to 3 · so Google and AI recognise us",
     intro: "Models favour names they already connect with a category. Being described the same way everywhere matters more than rewording a page.",
     items: [
       ["Choose one sentence for who we are, and never reword it", "Proposed: 'Prolific VA is a digital marketing and software company in Diani, Kenya that gets travel, tourism and hospitality businesses found, trusted and booked.' Put it in schema, llms.txt, the About text, every bio, directory and pitch.", "'Popular Get More Popular' study via SEO Stuff; SEO Stuff, 14 Sep", "quick"],
@@ -122,11 +148,10 @@ const DATA = [
   },
 
   {
-    icon: "3", title: "Get found: make digital marketing the line AI names first", time: "Weeks 2 to 5",
+    icon: "5", title: "Get found: make digital marketing the line AI names first", time: "Weeks 2 to 5",
     intro: "This is already our strongest line. KweliAI is the proof that we know how to get a brand discovered, so this is where it belongs.",
     items: [
       ["Put the KweliAI result on the digital marketing page, in plain numbers", "Our own product, with no ad budget and no domain authority, went from 67 to 313 Bing AI citations a month (July to October 2026) and ranks #1 on Google and Bing for its own name. Screenshot next to each number, and say what it means for a Diani hotel or tour operator.", "Proof folder (phase 0)"],
-      ["Publish 'How to get your hotel recommended by ChatGPT and Google'", "The how-to version of M2. The method in plain steps (indexing, one name, answer-first pages, reviews, being named on other sites), with KweliAI as the worked example. How-to answers cite pages, not businesses, so this is how we get cited for M2.", "SEO Stuff, 23 Sep: ten-minute test"],
       ["Answer 'How much does digital marketing for a hotel cost?' on the page", "Real ranges in KSh, what each package includes, how long before results show. Settle the conflicting prices first (visibility FAQ says 35,000 to 105,000; work FAQ about 30,000 to 55,000 a month).", "SEO Stuff: state pricing in numbers"],
       ["Answer 'How long before AI starts naming my business?'", "Honest timeline: indexing in days, page changes in 2 to 4 weeks, reviews and mentions in 4 to 8 weeks, what a model already knows in months. Use KweliAI's dated numbers as the example.", ""],
       ["Answer 'Is SEO worth it for a small guest house in Diani?'", "Who it's worth it for and who it isn't. Saying when not to hire us is the kind of plain answer AI repeats.", "SEO Stuff, 22 Sep"],
@@ -135,20 +160,19 @@ const DATA = [
   },
 
   {
-    icon: "4", title: "Get trusted: websites owners can check", time: "Weeks 3 to 6",
+    icon: "6", title: "Get trusted: websites owners can check", time: "Weeks 3 to 6",
     intro: "AI named us 4th of 8 once for websites, and never on ChatGPT or Gemini. The page needs the facts AI lifts: price, time, what's included, real builds.",
     items: [
       ["Answer 'Who builds websites for hotels, villas and tour operators in Diani?' in the first lines", "A bold one-sentence answer under a question heading at the top of websites.html: what we build, for whom, in Diani, how long, from what price.", "Semrush: clarity +32.8%"],
       ["Publish real prices and timelines for websites", "One table: site type, what's included, KSh range, weeks to launch. The meta description says 10 to 14 days while the FAQ says weeks; make them match.", "SEO Stuff: state pricing in numbers"],
       ["Show the sites we built, as facts", "Palm &amp; Tide, Zanzitan, Mohaa Computers, GoldenStar, EuroBuild: what each site does (booking, M-Pesa, WhatsApp, menus), with a link and a screenshot. No traffic or booking numbers we can't prove.", ""],
-      ["Answer 'Do I need my own website if I'm on Booking.com and Airbnb?'", "Commission costs, what owning the booking means, how M-Pesa direct booking works, and that AI told 71% of travellers in Propellic's study to book direct when a direct option existed.", "Propellic via SEO Stuff"],
       ["Add a 'Website by Prolific VA' credit on client sites", "A small footer link with plain wording on Palm &amp; Tide, Zanzitan, Mohaa Computers, GoldenStar and EuroBuild. Each one is a site with no stake in our success naming us.", "SEO Stuff checklist, 21 Sep", "quick"],
       ["Make photos findable by Google Lens", "Real img tags, descriptive file names (hotel-website-diani-booking.webp), specific alt text and text near each image. Search Console now counts Lens and Circle to Search.", "SEO Stuff, 28 Sep", "quick"]
     ]
   },
 
   {
-    icon: "5", title: "Get booked: Safina MIS and Jahazi POS", time: "Weeks 4 to 8",
+    icon: "7", title: "Get booked: Safina MIS and Jahazi POS", time: "Weeks 4 to 8",
     intro: "AI groups rivals by category. Pages that sit in those categories, with fair comparisons, give it something to lift.",
     items: [
       ["Remove 'launching soon' and say plainly that Jahazi is live", "Live at New Glory Enterprises, with eTIMS and M-Pesa Push, screenshots and what it does as plain text near the top. AI Mode listed live rivals instead because our pages said 'launching soon'.", "Day-0 data, AI Mode J1", "quick"],
@@ -156,7 +180,6 @@ const DATA = [
       ["Add a restaurant and beach bar section to Jahazi", "Diani's restaurants and bars are hospitality buyers too. E-menu, M-Pesa at the table, eTIMS receipts, end-of-day report.", ""],
       ["Keep the Safina comparison honest and dated", "Compare with the names AI listed: TENari, Microstation, Diafa PMS, NightsBridge, ReservePort, Kiotapay, Frontdesko, Little Hotelier. A 'checked on' date per vendor, re-checked quarterly, and a line saying Prolific VA built Safina MIS.", "Day-0 data, S1 and S2"],
       ["Get 'Safina MIS' named directly", "Gemini named it only indirectly. Use the exact name with a one-line definition at the top of the page, in schema and in llms.txt: 'Safina MIS is hotel booking and room management software for small hotels and guest houses in Kenya, built by Prolific VA.'", "Day-0 data, Gemini S1"],
-      ["Answer 'How do I stop double bookings at my guest house?'", "A plain how-to with Safina as one of the answers, under 375 words, readable cold.", "SEO Stuff, 23 Sep"],
       ["Get Safina listed where AI looks for booking software", "AI cited pesapal.com and kiotapay.com for booking-software questions. Ask Pesapal about an integration or partner listing.", "Day-0 data"]
     ]
   },
@@ -167,7 +190,7 @@ const DATA = [
   },
 
   {
-    icon: "6", title: "Write every sales page the way AI reads it", time: "Ongoing, one page at a time",
+    icon: "8", title: "Write every sales page the way AI reads it", time: "Ongoing, one page at a time",
     intro: "AI scores a piece of a page, roughly 375 words, under the heading above it. Improve the pages that sell before writing new ones.",
     items: [
       ["Turn the prompt bank into a question map", "For each line (found, trusted, booked), list what an owner asks before hiring: cost, time, what's included, how it compares, what goes wrong. Add questions from enquiries, field visits, WhatsApp and long Search Console queries (Performance, 12 months, regex <code>^(?:\\S+\\s+){9,}\\S+$</code>).", "BrightLocal; Similarweb via SEO Stuff"],
@@ -182,20 +205,21 @@ const DATA = [
   },
 
   {
-    icon: "7", title: "Field sales: the site in your hand", time: "Before every visit",
-    intro: "The site is what you show an owner across the desk. It should feel like it was made for their business.",
+    icon: "9", title: "Pages wave 2: what owners check every week", time: "After the pause, from about 1 Dec · one guide a week",
+    intro: "Same rules as wave 1. Before writing, check what owners told you in field visits and what wave 1's data shows: if one guide gets impressions, write the next one closest to it first.",
     items: [
-      ["Make the site fast and readable on a phone on mobile data", "The service pages, the work page, the Diani report and the comparisons must load quickly on Safaricom data and read well on a small screen.", "", "quick"],
-      ["Tell the story in one breath", "'We get travel, tourism and hospitality businesses in Diani, voted Africa's Leading Beach Destination in 2024, found, trusted and booked: digital marketing to get you found, a website and real reviews to get you trusted, and software to get you booked.' Every part has proof behind it.", ""],
-      ["Show them their own AI answer", "Before the visit, ask ChatGPT and Gemini 'best [their type of business] in Diani' and screenshot it. Showing an owner whether they appear, and who appears instead, makes it about their business.", "", "quick"],
-      ["Run the 5-minute test: can they hire us from their phone?", "After you leave, can the owner get a quote or book a demo using only what's public? Tel, WhatsApp and the form must work, and the reply-time promise must match everywhere ('one business day' vs 'when we can').", "SEO Stuff, 8 Sep", "quick"],
-      ["Give 'book a demo' and 'get a quote' clear pages", "Say what happens, how long it takes and what to prepare. Google is testing a top spot in AI answers for the one official page that finishes a task.", "SEO Stuff, Nov"],
-      ["Set up WhatsApp Business properly", "Greeting, away message with hours, quick replies with price ranges and links to the three service pages.", "", "quick"]
+      ["Guide: How to take direct bookings with M-Pesa and card, without the platforms", "The booking path step by step: a website, M-Pesa (Paybill or Till), card via Pesapal, WhatsApp, Google's free booking links. What it costs to set up. Ends with: websites and Safina.", "Propellic via SEO Stuff"],
+      ["Guide: How to stop double bookings across Booking.com, Airbnb and walk-ins", "Why they happen, the manual fix (one calendar, who updates it, when), and when software is worth it. Ends with: Safina.", "Day-0 prompt S1"],
+      ["Guide: Google Business Profile for Diani hotels, set up properly", "Category, photos, services, booking link, reviews, Q&amp;A, the mistakes that hide a listing. Google's AI leans on the Business Profile (29% of local AI citations). Ends with: our digital marketing.", "BrightLocal"],
+      ["Guide: How to get more Google and TripAdvisor reviews without breaking the rules", "When and how to ask, the QR code at check-out, replying to bad reviews, what's banned (buying, gating, scripting). Ends with: our digital marketing.", "Propellic"],
+      ["Guide: How much does a hotel or tour website cost in Kenya?", "Our real price table plus what drives the price (booking, M-Pesa, languages, photos), what to ask any developer. Ends with: websites. Needs the settled prices from phase 6.", "Day-0 prompt W2"],
+      ["Guide: Why doesn't my hotel show up when tourists search 'Diani'?", "The usual reasons (no Business Profile, not on Bing, no reviews, name mismatch, no page for what guests ask) and how to check each one yourself. Ends with: our digital marketing.", ""],
+      ["Give 'book a demo' and 'get a quote' clear pages", "Say what happens, how long it takes and what to prepare. Google is testing a top spot in AI answers for the one official page that finishes a task.", "SEO Stuff, Nov"]
     ]
   },
 
   {
-    icon: "8", title: "Get named outside our own site", time: "Weeks 2 to 12 · slow, start early",
+    icon: "10", title: "Get named outside our own site", time: "Weeks 2 to 12 · slow, start early",
     intro: "A claim on our homepage is a claim. The same claim from someone with no stake in our success is a fact.",
     items: [
       ["Finish our Google Business Profile and claim Bing Places", "Category, services, service area (Diani, Ukunda, Kwale), photos of real work, the one sentence. Google's AI leans on the Business Profile (29% of local AI citations), and ChatGPT leans on Bing.", "BrightLocal", "quick"],
@@ -214,7 +238,21 @@ const DATA = [
   },
 
   {
-    icon: "9", title: "Measure what matters, then repeat", time: "Monthly, from January 2027",
+    icon: "11", title: "Pages wave 3: rules, seasons and choosing a supplier", time: "From about February 2027 · after wave 2 has data",
+    intro: "The rules pages need the most care: a wrong fee or rule damages trust more than no page. Take every figure from the official source, link it, date it, and re-check it every quarter.",
+    items: [
+      ["Guide: Tourism and catering levies and licensing in Kenya, in plain words", "Who pays what, to whom, how often, and the licences a hotel, restaurant or tour operator needs. Sources: Tourism Regulatory Authority, Tourism Fund, KRA, Kwale County. Ends with: Jahazi (eTIMS) and Safina (records).", "Official sources only"],
+      ["Guide: Kenya's eTA for visitors: what hotels and tour operators should tell guests", "Who needs it, how long it takes, what it costs, the official site (and the fake ones). Guests ask their hosts. Ends with: a booking page that answers it before they ask.", "Official source only"],
+      ["Guide: How to fill rooms in Diani's low season", "Which months are quiet, who travels then (residents, conferences, long stays), offers that work, and how to be found for them. Ends with: our digital marketing.", ""],
+      ["Guide: Spreadsheet or hotel software: when does a small guest house need a system?", "Honest signs you're ready and signs you're not. Ends with: Safina.", "SEO Stuff, 22 Sep: say who it's not for"],
+      ["Guide: Choosing a POS for a restaurant or beach bar in Kenya", "eTIMS, M-Pesa, e-menu, offline use, stock, staff accounts, price: what to ask any vendor. Ends with: Jahazi and its comparison page.", "Day-0 prompts J1, J2"],
+      ["Guide: How to choose a digital marketing agency for a hospitality business in Kenya", "The questions to ask any agency, what proof to ask for, red flags, what it should cost. Our own answers to each. Safer than naming rivals.", "Day-0 prompt M1"],
+      ["Write the next pages from what owners asked in the field", "Look at the questions logged on field visits (phase 2). Any question asked by three or more owners gets a guide.", ""]
+    ]
+  },
+
+  {
+    icon: "12", title: "Measure what matters, then repeat", time: "Monthly, from January 2027",
     intro: "The question isn't 'how much AI traffic', it's 'were we recommended, and did owners get in touch'.",
     items: [
       ["Run the monthly prompt test", "The gold core prompts on ChatGPT, Gemini, Google AI Mode, Copilot and Perplexity, 3 runs each, a fresh chat every time. Log named, cited, position, rivals and domains. 7 in 10 businesses AI names show up on only one assistant, so never judge from one tool.", "BrightLocal; SEO Stuff"],
