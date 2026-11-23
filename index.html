@@ -1,32 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prolific VA — GEO &amp; SEO Strategy Checklist</title>
-<meta name="description" content="Phased checklist to make Prolific VA the first name Google and AI give when travel, tourism and hospitality owners in Diani ask for marketing, websites, hotel software or POS.">
-<link rel="stylesheet" href="checklist.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Prolific VA Visibility Checklist</title>
+<meta name="description" content="Tasks in order to make Prolific VA the name Google and AI give when hotels, villas and tour operators on the Kenyan coast look for marketing, websites and booking software."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0a0a0a;
+  --surface:#111111;
+  --surface2:#181818;
+  --border:#222222;
+  --border2:#2a2a2a;
+  --text:#f0ede8;
+  --muted:#6b6762;
+  --subtle:#3a3835;
+  --accent:#c9a96e;
+  --accent-dim:#7a6340;
+  --green:#1D9E75;
+  --green-dim:#0a3d2e;
+  --blue:#378ADD;
+  --blue-dim:#0d2e52;
+  --purple:#7F77DD;
+  --purple-dim:#25235a;
+  --amber:#BA7517;
+  --amber-dim:#3d2706;
+  --pink:#D4537E;
+  --pink-dim:#4a1530;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  min-height:100vh;
+}
+
+/* ── Layout ── */
+.page{max-width:760px;margin:0 auto;padding:3rem 1.5rem 5rem}
+
+/* ── Hero ── */
+.hero{margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:0.5px solid var(--border)}
+.hero-eyebrow{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500}
+.hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.1;color:var(--text);margin-bottom:1rem}
+.hero-title em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:14px;color:var(--muted);max-width:520px;line-height:1.7}
+
+/* ── Stats ── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:2rem}
+.stat{background:var(--surface);padding:1.25rem 1rem;text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--text);display:block;line-height:1}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px;display:block;letter-spacing:0.04em}
+
+/* ── Progress ── */
+.prog-row{display:flex;align-items:center;gap:12px;margin-bottom:2rem}
+.prog-track{flex:1;height:2px;background:var(--border2);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.5s cubic-bezier(.4,0,.2,1);width:0%}
+.prog-pct{font-size:12px;color:var(--muted);min-width:40px;text-align:right}
+
+/* ── Filters ── */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2.5rem}
+.fb{
+  font-size:11px;
+  padding:5px 12px;
+  border-radius:20px;
+  border:0.5px solid var(--border2);
+  background:transparent;
+  cursor:pointer;
+  color:var(--muted);
+  font-family:'DM Sans',sans-serif;
+  font-weight:400;
+  transition:all 0.15s;
+  letter-spacing:0.02em;
+}
+.fb:hover{border-color:var(--subtle);color:var(--text)}
+.fb.on{background:var(--accent);border-color:var(--accent);color:#0a0a0a;font-weight:500}
+
+/* ── Phase ── */
+.phase{margin-bottom:2.5rem}
+.phase-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+  padding-bottom:10px;
+  border-bottom:0.5px solid var(--border);
+}
+.phase-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.phase-name{font-size:12px;font-weight:500;color:var(--text);flex:1;letter-spacing:0.04em;text-transform:uppercase}
+.phase-week{font-size:11px;color:var(--muted)}
+.phase-tally{
+  font-size:11px;
+  color:var(--muted);
+  background:var(--surface2);
+  padding:2px 8px;
+  border-radius:20px;
+  border:0.5px solid var(--border2);
+}
+
+/* ── Items ── */
+.items{display:flex;flex-direction:column;gap:3px}
+.item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:13px 14px;
+  border-radius:8px;
+  border:0.5px solid var(--border);
+  background:var(--surface);
+  cursor:pointer;
+  transition:border-color 0.15s,background 0.15s;
+}
+.item:hover{background:var(--surface2);border-color:var(--border2)}
+.item.done{background:var(--bg);border-color:var(--border)}
+.item.done .ititle{text-decoration:line-through;color:var(--muted)}
+.item.done .idesc,.item.done .tags{opacity:0.4}
+
+.cb{
+  width:17px;height:17px;
+  border-radius:4px;
+  border:1px solid var(--subtle);
+  flex-shrink:0;
+  margin-top:2px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.2s;
+}
+.cb.on{background:var(--green);border-color:var(--green)}
+.ck{color:#fff;font-size:10px;line-height:1}
+
+.ibody{flex:1;min-width:0}
+.ititle{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.4}
+.idesc{font-size:12px;color:var(--muted);line-height:1.6}
+.ix{margin-top:10px;overflow-x:auto;cursor:default}
+.ix-toggle{margin-top:8px;background:none;border:0.5px solid var(--border2);color:var(--muted);font-size:11px;padding:3px 9px;border-radius:6px;cursor:pointer;font-family:inherit}
+.ix-toggle:hover{color:var(--text);border-color:var(--muted)}
+.ix-wrap[hidden]{display:none}
+.sub{margin-top:10px;display:flex;flex-direction:column;gap:6px;cursor:default}
+.sub-item{display:flex;gap:9px;align-items:flex-start;padding:7px 9px;border:0.5px solid var(--border2);border-radius:7px;cursor:pointer}
+.sub-item .cb{width:15px;height:15px;flex-shrink:0;margin-top:1px}
+.sub-item.on .sub-t{text-decoration:line-through;color:var(--muted)}
+.sub-t{font-size:12px;color:var(--text);font-weight:500}
+.sub-d{font-size:11px;color:var(--muted);line-height:1.5;margin-top:2px}
+.ix table{border-collapse:collapse;font-size:11.5px;min-width:520px;width:100%}
+.ix th,.ix td{padding:5px 8px;border-bottom:0.5px solid var(--border2);text-align:right;white-space:nowrap;color:var(--muted)}
+.ix th:first-child,.ix td:first-child{text-align:left}
+.ix th{font-weight:500;color:var(--text);font-size:10.5px;letter-spacing:0.03em}
+.ix td.goal{color:var(--accent);font-weight:500}
+.ix .note{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;font-weight:500;letter-spacing:0.02em}
+.t-tech{background:var(--blue-dim);color:#85B7EB}
+.t-content{background:var(--green-dim);color:#5DCAA5}
+.t-money{background:var(--amber-dim);color:#EF9F27}
+.t-ai{background:var(--purple-dim);color:#AFA9EC}
+.t-quick{background:#1a2e1a;color:#97C459}
+.t-proof{background:#3d2706;color:#EF9F27}
+.t-track{background:var(--pink-dim);color:#ED93B1}
+
+/* ── Footer ── */
+.footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);text-align:center;font-size:12px;color:var(--muted)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+/* ── Share ── */
+.share-row{display:flex;gap:8px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+.share-btn{
+  font-size:12px;
+  padding:8px 18px;
+  border-radius:20px;
+  border:0.5px solid var(--border2);
+  background:var(--surface);
+  color:var(--text);
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:all 0.15s;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.share-btn:hover{background:var(--surface2);border-color:var(--subtle)}
+.share-btn.primary{background:var(--accent);border-color:var(--accent);color:#0a0a0a;font-weight:500}
+.share-btn.primary:hover{opacity:0.9}
+
+@media(max-width:520px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat-num{font-size:1.5rem}
+  .hero-title{font-size:1.8rem}
+}
+</style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="eyebrow">Prolific VA · GEO &amp; SEO Strategy · Revised 12 October 2026 · Day-0 data in</div>
-    <h1>Be the First Name Google and AI Give</h1>
-    <p class="sub"><b id="stepCount">0</b> steps across <b id="phaseCount">0</b> phases to make Prolific VA the answer when owners in Diani's travel, tourism and hospitality businesses ask for digital marketing, a website, hotel booking software or a POS. Built around the new site structure: discovered, trusted, booked.</p>
-  </header>
+<div class="page">
 
-  <div class="note"><b>Be realistic about "first".</b> AI answers are short (about 2.5 to 4 businesses each) and change from run to run, so the goal is to be named in the top few answers consistently, not to hold #1 everywhere. AI referrals are still only about 1% of web traffic, so this runs alongside normal Google ranking, not instead of it.</div>
-
-  <div class="progress-wrap">
-    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
-    <div class="progress-label"><span>Progress</span><span><b id="done">0</b> / <span id="total">0</span> complete</span></div>
+  <div class="hero">
+    <div class="hero-eyebrow">Prolific VA · Visibility system · Revised 23 Nov 2026</div>
+    <h1 class="hero-title">Found when the coast<br><em>looks for help</em></h1>
+    <p class="hero-sub">Tasks in order, so that when a hotel, villa, tour operator or restaurant owner in Diani asks Google or AI who can market them, build their website or take their bookings, Prolific VA is named and checks out. Built from the KweliAI method and the SEO Stuff emails (4 Sep to 20 Nov 2026). Progress saves in your browser.</p>
   </div>
 
-  <div id="phases"></div>
+  <div class="stats" style="grid-template-columns:repeat(4,1fr);margin-bottom:12px">
+    <div class="stat"><span class="stat-num">1/7</span><span class="stat-label">named by ChatGPT</span></div>
+    <div class="stat"><span class="stat-num">3/6</span><span class="stat-label">named by Gemini</span></div>
+    <div class="stat"><span class="stat-num">2/6</span><span class="stat-label">named by AI Mode</span></div>
+    <div class="stat"><span class="stat-num">0/6</span><span class="stat-label">Jahazi POS, all tools</span></div>
+  </div>
+  <p class="hero-sub" style="margin:-4px 0 2rem;font-size:12px">Day-0, one run per tool, 10–12 Oct 2026. A first reading, not a rate.</p>
 
-  <footer>Built for <a href="https://prolificva.co.ke" target="_blank" rel="noopener">prolificva.co.ke</a> · checked items save in this browser<br>Sources are vendor-run studies and newsletters (BrightLocal, Propellic, Semrush, Similarweb, Conductor, SEO Stuff). Treat the direction as sound and the exact percentages as snapshots.</footer>
+  <div class="stats">
+    <div class="stat"><span class="stat-num" id="sDone">0</span><span class="stat-label">completed</span></div>
+    <div class="stat"><span class="stat-num" id="sTotal">0</span><span class="stat-label">total tasks</span></div>
+    <div class="stat"><span class="stat-num" id="sQuick">0</span><span class="stat-label">quick wins left</span></div>
+  </div>
+
+  <div class="prog-row">
+    <div class="prog-track"><div class="prog-fill" id="pf"></div></div>
+    <span class="prog-pct" id="pct">0%</span>
+  </div>
+
+  <div class="filters">
+    <button class="fb on" onclick="setF('all',this)">All</button>
+    <button class="fb" onclick="setF('quick',this)">Quick wins</button>
+    <button class="fb" onclick="setF('tech',this)">Technical</button>
+    <button class="fb" onclick="setF('content',this)">Content</button>
+    <button class="fb" onclick="setF('money',this)">Enquiries</button>
+    <button class="fb" onclick="setF('track',this)">Tracking</button>
+    <button class="fb" onclick="setF('ai',this)">AI visibility</button>
+  </div>
+
+  <div id="root"></div>
+
+  <div class="share-row">
+    <button class="share-btn" onclick="copyLink()">Copy link</button>
+  </div>
+
+  <div class="footer">
+    Built for <a href="https://www.prolificva.co.ke" target="_blank" rel="noopener">prolificva.co.ke</a> · Sources: SEO Stuff emails, Similarweb, BrightLocal, Semrush, Surfer, Seeably, Minuttia, Propellic. Most are vendor studies: trust the direction, treat the exact percentages as snapshots.
+  </div>
+
 </div>
 
-<script src="checklist.js"></script>
+<script>
+const PH=[
+{dot:"#D4537E",name:"1 — Measure before you change anything",week:"This week · Google's core update ends about 24 Nov",items:[
+{k:"p_core",t:"Don't change key pages until the core update settles",d:"Google's November core update started 10 Nov and may run to 24 Nov. Google advises waiting a full week after it finishes, then comparing that week with a week before 10 Nov. The first clean week ends about 1 Dec. Until then, collect data and fix only plain errors.",tags:["track","quick"]},
+{k:"p_ga4",t:"Add Google Analytics 4 to every page",d:"The site has only Microsoft Clarity, so no report can say which source brings an enquiry. Add GA4 with events for form_submit, whatsapp_click, tel_click and demo_request, and mark them as key events. Copy the 'AI channels' group from KweliAI so ChatGPT, Perplexity, Copilot, Gemini and Claude visits show as one channel.",tags:["track","tech","quick"]},
+{k:"p_hear",t:"Ask 'How did you hear about us?' on the enquiry form",d:"Most visits that start in an AI answer arrive later as a Google search or a direct visit. Similarweb found more than 6 search visits for every one credited to ChatGPT. Options: Google, ChatGPT, Gemini, another AI tool, Instagram or Facebook, a client's website, referral, other. Ask the same on every call.",tags:["track","quick"]},
+{k:"p_index",t:"Resubmit the sitemap and the pages changed on 22 Nov",d:"sitemap.xml was updated on 22 Nov. In Search Console and Bing Webmaster Tools, submit it, then request indexing for the home page, work.html and visibility.html (M&H case study added). ChatGPT and Copilot lean on Bing's index, Gemini and AI Mode on Google's.",tags:["tech","quick"]},
+{k:"p_base",t:"Record the starting numbers",d:"Before any change, write down the last 3 months from Search Console and Bing, page by page, plus branded searches for 'prolific va' and the enquiries you got. Every later result is judged against this.",tags:["track","quick"],x:"<table><tr><th>Metric</th><th>Baseline (3 months to 1 Dec)</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Goal by 31 Mar 2027</th></tr><tr><td>Google clicks, whole site</td><td>–</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">set after baseline</td></tr><tr><td>Google impressions for 'prolific va' (branded)</td><td>–</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">rising</td></tr><tr><td>Google AI impressions (Generative AI report)</td><td>–</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">rising</td></tr><tr><td>Bing impressions / AI citations</td><td>–</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">rising</td></tr><tr><td>Enquiries (form, WhatsApp, calls)</td><td>–</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">set after baseline</td></tr><tr><td>Enquiries from Diani and coast hospitality</td><td>–</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">set after baseline</td></tr><tr><td>Named in AI answers (recommendation prompts)</td><td>ChatGPT 1/7 · Gemini 3/6 · AI Mode 2/6 (Oct, run 1)</td><td>–</td><td>–</td><td>–</td><td class=\"goal\">named in most, on every tool</td></tr></table><div class=\"note\">Judge by Search Console, Bing and enquiries. Rank trackers are unreliable since September: Google blocks scrapers and sometimes feeds them altered results.</div>"},
+{k:"p_prompts",t:"Run the AI baseline again: 3 runs, 5 tools",d:"October's Day-0 test was one run on ChatGPT, Gemini and Google AI Mode. AI answers change between runs, and a business named once came back only about half the time. Run every prompt 3 times on ChatGPT, Gemini, Google AI Mode, Copilot and Perplexity, each in a fresh chat. Log named or not, position, linked or not, rivals named and domains cited.",tags:["track","ai"],x:"<div class=\"note\" style=\"margin:0 0 6px\"><strong>Prompts (owners' wording, no brand named)</strong></div><table><tr><th>#</th><th>Line</th><th>Prompt</th><th>Day-0 (Oct, 1 run)</th></tr><tr><td>M1</td><td>Discovered</td><td>Who does SEO for hotels and tour operators in Diani?</td><td>Gemini 1st · AI Mode 1st · ChatGPT once of 2</td></tr><tr><td>M2</td><td>Discovered</td><td>How do I get my hotel to show up on ChatGPT and Google?</td><td>how-to, check citation</td></tr><tr><td>M3</td><td>Discovered</td><td>Who offers digital marketing for hotels and tour operators in Diani?</td><td>AI Mode 1st</td></tr><tr><td>M4</td><td>Discovered</td><td>How much does digital marketing for a hotel in Kenya cost?</td><td>–</td></tr><tr><td>W1</td><td>Trusted</td><td>Who builds websites for hotels and villas in Diani?</td><td>AI Mode 4th only</td></tr><tr><td>W2</td><td>Trusted</td><td>How much does a hotel website cost in Kenya?</td><td>how-to</td></tr><tr><td>W3</td><td>Trusted</td><td>Hotel website with direct booking and M-Pesa in Kenya</td><td>–</td></tr><tr><td>S1</td><td>Booked</td><td>Hotel booking software in Kenya for a small guest house</td><td>Gemini, indirect</td></tr><tr><td>S2</td><td>Booked</td><td>Alternative to Booking.com for direct bookings in Kenya</td><td>Gemini 3rd</td></tr><tr><td>S3</td><td>Booked</td><td>How do I stop double bookings at my guest house?</td><td>–</td></tr><tr><td>J1</td><td>Booked</td><td>POS system in Kenya with KRA eTIMS and M-Pesa</td><td>0 of 3</td></tr><tr><td>J2</td><td>Booked</td><td>POS for a shop with walk-in, online and field sales</td><td>0 of 3</td></tr><tr><td>B1</td><td>Brand</td><td>What is Prolific VA?</td><td>ChatGPT mixed up with Prolific.com</td></tr><tr><td>B2</td><td>Brand</td><td>Is Prolific VA legit? Any reviews?</td><td>ChatGPT leaned on Clutch (Ukunda, no reviews)</td></tr></table><div class=\"note\">Rivals AI named in October: Goldfish Marketing, Zuchi Technologies, Kenya SEO Experts, Donvic, Black Shepherd (marketing and websites); TENari, Microstation, Diafa PMS, NightsBridge, ReservePort, Kiotapay, Frontdesko, Little Hotelier (Safina); Veira, Cute Profit POS, Retaela, WIK POS, NodePoint (Jahazi). Domains cited: theafricanhotelier.com, kenyageographic.com, pesapal.com, kiotapay.com, clutch.co, linkedin.com.</div>"},
+{k:"p_log",t:"Log every change with its baseline and check date",d:"Same rule as KweliAI: every page edit, new page or profile change gets a row with the date, the page, what changed, which newsletter rule or data it came from, the numbers that day, and a check date 4 weeks later. Change one page at a time where possible, so each change can be credited or undone.",tags:["track"],x:"<table><tr><th>Date</th><th>Page</th><th>Change</th><th>Why</th><th>Baseline</th><th>Check on</th><th>Result</th></tr><tr><td>22 Nov 2026</td><td>work, index, visibility</td><td>M&amp;H added first, KweliAI case removed from grids</td><td>Hospitality focus</td><td>–</td><td>20 Dec 2026</td><td>–</td></tr><tr><td>22 Nov 2026</td><td>sitemap.xml</td><td>lastmod dates per page</td><td>Accurate freshness</td><td>–</td><td>–</td><td>–</td></tr></table><div class=\"note\">When a rule clearly works, copy it to the KweliAI 'Playbook (proven)' note too.</div>"}
+]},
+{dot:"#BA7517",name:"2 — Make every claim checkable",week:"Week 1 · before asking anyone to link to us",items:[
+{k:"p_claims",t:"Back up or remove every stat on the site",d:"AI research models now check figures against sources and skip what they can't confirm, and buyers ask AI 'is Prolific VA legit?' before they call. A number we can't show is a risk, not proof. For each claim: show the real number with a dated screenshot from GA4, Search Console or Bing, or replace it with what really happened, or remove it. Update the slides, the Diani report and llms.txt together.",tags:["content","ai","quick"],x:"<table><tr><th>Claim</th><th>Where</th><th>Status</th></tr><tr><td>Palm &amp; Tide +19.5% ChatGPT sessions</td><td>visibility.js, Diani report, llms.txt</td><td>not backed</td></tr><tr><td>Palm &amp; Tide +3,100% booking-page sessions</td><td>visibility.js, Diani report, llms.txt</td><td>not backed</td></tr><tr><td>Palm &amp; Tide +12.2% time on site</td><td>visibility.js</td><td>not backed</td></tr><tr><td>Palm &amp; Tide 'primary citation in ChatGPT, Perplexity, Grok'</td><td>visibility.js</td><td>not backed</td></tr><tr><td>Zanzitan +43% AI-referred sessions</td><td>visibility.js, Diani report, llms.txt</td><td>not backed</td></tr><tr><td>Zanzitan +280% Bing impressions</td><td>visibility.js</td><td>not backed</td></tr><tr><td>Zanzitan 'top citation' on Perplexity and Copilot</td><td>visibility.js</td><td>not backed</td></tr><tr><td>KweliAI 355 Copilot citations in 3 months</td><td>Diani report, llms.txt, visibility.js</td><td>not backed. Real Bing data exists: AI citations 67 (Jul), 153 (Aug), 289 (Sep), 313 (Oct 2026)</td></tr><tr><td>KweliAI 12 citation queries, 171 days to first subscriber</td><td>visibility.js</td><td>confirm source</td></tr><tr><td>Kakamega Guest House 2x reservations, 100% live time</td><td>home, Safina page, safina.js, llms.txt</td><td>confirm with the client in writing</td></tr><tr><td>New Glory 50% faster service, 2x customers a minute</td><td>jahazi.js</td><td>confirm with the client in writing</td></tr></table><div class=\"note\">The Diani report's KweliAI box links to visibility.html#case-studies, where KweliAI no longer appears. Fix the link when you fix the number.</div>"},
+{k:"p_quotes",t:"Get written approval for every client quote and name",d:"Liz (Palm &amp; Tide), Julius (Kakamega Guest House), Baba Mwaniki (New Glory) and any M&amp;H quote. A WhatsApp 'yes, you can publish this' with the exact text is enough. Keep it with the change log.",tags:["content","quick"]},
+{k:"p_prices",t:"Put prices and timelines in one table, then match every page",d:"AI fills gaps from somewhere else when prices are hidden, and Claude searches specifically for current prices. List every price and timeline on the site (visibility, websites, Safina, Jahazi FAQs, schema, llms.txt), settle one version for each service, and make every page say it.",tags:["content","ai"]},
+{k:"p_adj",t:"Swap adjectives for facts",d:"'Proven', 'trusted' and 'industry-leading' can't be checked, so AI can't repeat them. Replace them with things it can check: named clients, what was built, dates, prices, timelines, integrations (eTIMS, M-Pesa), service areas.",tags:["content","ai"]},
+{k:"p_mh",t:"Set up M&amp;H's tracking on launch day",d:"M&amp;H is the flagship for the coast. Before it goes live, add GA4 with a booking-click event, Search Console and Bing Webmaster Tools for their domain, and record day-0 numbers. Without this there will be no true results slide. Keep 'Awaiting deployment' on all three pages until it is live.",tags:["track","quick"]}
+]},
+{dot:"#378ADD",name:"3 — Be one name, said the same way everywhere",week:"Week 1–3 · so AI recognises us",items:[
+{k:"p_line",t:"Choose one sentence for who we are, and never reword it",d:"Models favour names they already connect with a category. A real brand beat an invented one by 0.44 places on identical pages, while rewording the page did almost nothing. Proposed: 'Prolific VA is a digital marketing and software company in Diani, Kenya, that helps hotels, villas, tour operators and restaurants get discovered, trusted and booked.' Put it in schema, llms.txt, every bio, every directory and every pitch.",tags:["ai","quick"]},
+{k:"p_about",t:"Build an About page",d:"There is none. ChatGPT confused Prolific VA with Prolific.com in October. Add who we are, the founder (Mohammad Nyundo, LinkedIn), the Diani address as on Google Business Profile, what we do and don't do, the clients we've worked with, and an 'Is Prolific VA related to Prolific.com?' answer. Add Organization and Person schema and link it from every footer.",tags:["content","ai"]},
+{k:"p_byline",t:"Put a named author and date on every service page",d:"Only the home page and the Diani report name the founder. Named authors and credentials went with 30% more AI citations in Semrush's study. Add 'By Mohammad Nyundo, Founder · updated [date]' under each H1 and a short author note at the end.",tags:["content","ai","quick"]},
+{k:"p_branded",t:"Win the search people make after an AI mentions us",d:"55.9% of visits after a ChatGPT recommendation came through search. Check what Google and Bing show for 'Prolific VA', 'Prolific VA reviews', 'Prolific VA Diani', 'Safina MIS' and 'Jahazi POS'. Fix whatever is wrong or missing, starting with the Clutch page (Ukunda, no reviews).",tags:["ai","tech"]},
+{k:"p_nap",t:"Make name, address and phone match everywhere",d:"Google Business Profile, Bing Places, Clutch, LinkedIn, Facebook, Instagram, TikTok, X and the site schema. Same name, address, +254 182 927 998, email, and the one sentence. Add the new profiles to sameAs.",tags:["tech","quick"]},
+{k:"p_hub",t:"Check whether we can claim Prolific VA in ChatGPT",d:"OpenAI launched Business Hub on 10 Nov. Local businesses can only claim existing US listings for now, so it may not open to us yet. If it does, get every detail right before submitting, because a published profile can't be deleted. Identity is verified through Persona.",tags:["ai"]}
+]},
+{dot:"#7F77DD",name:"4 — Answer what coast owners ask before they hire",week:"Week 2–8 · from 1 Dec, after the update settles",items:[
+{k:"p_qmap",t:"Write the question map for each service line",d:"List the real questions hotel, villa and tour owners ask before choosing: what it costs, how long, what's included, how it compares, what goes wrong, alternatives. Pull them from enquiries, WhatsApp chats and Search Console (Performance, 12 months, query regex ^(?:\\S+\\s+){9,}\\S+$). Under a dozen answered per line is the gap.",tags:["content","ai"],x:"<table><tr><th>Line</th><th>Question</th><th>Best page now</th><th>Status</th></tr><tr><td>Discovered</td><td>How much does digital marketing for a hotel in Kenya cost?</td><td>visibility.html FAQ</td><td>partly</td></tr><tr><td>Discovered</td><td>How do I get my hotel recommended by ChatGPT?</td><td>Diani report</td><td>yes</td></tr><tr><td>Discovered</td><td>Is SEO worth it for a small guest house in Diani?</td><td>–</td><td>no</td></tr><tr><td>Discovered</td><td>How long before AI starts naming my hotel?</td><td>–</td><td>no</td></tr><tr><td>Trusted</td><td>How much does a hotel website cost in Kenya?</td><td>websites.html FAQ</td><td>partly</td></tr><tr><td>Trusted</td><td>Can guests book and pay by M-Pesa on my website?</td><td>Safina page</td><td>partly</td></tr><tr><td>Trusted</td><td>Do I need a website if I'm on Booking.com and Airbnb?</td><td>–</td><td>no</td></tr><tr><td>Trusted</td><td>How do I get more Google reviews for my hotel?</td><td>–</td><td>no</td></tr><tr><td>Booked</td><td>How do I take direct bookings without commission?</td><td>Safina page</td><td>yes</td></tr><tr><td>Booked</td><td>How do I stop double bookings?</td><td>Safina page</td><td>partly</td></tr><tr><td>Booked</td><td>Which POS works with KRA eTIMS and M-Pesa?</td><td>Jahazi page</td><td>partly</td></tr><tr><td>Booked</td><td>Safina MIS vs Little Hotelier / NightsBridge / Kiotapay?</td><td>Safina comparison</td><td>yes</td></tr></table><div class=\"note\">Add rows as real questions come in. Mark 'yes' only when one section answers it on its own.</div>"},
+{k:"p_10",t:"Improve the 7 pages that sell before writing new ones",d:"Core-update advice: fix the pages buyers read before adding more. Home, visibility, websites, Safina, Jahazi, work and the Diani report. For each, does it say plainly what we offer, where we work, who we help, what it costs and what makes us different?",tags:["content"]},
+{k:"p_375",t:"Apply the KweliAI page structure to those 7 pages",d:"Google's AI lifts chunks of about 375 words, labelled by the heading above. H1 and every H2 as the buyer's question, a bold one-sentence answer first, sections under 375 words, a 'What we don't do' section, a byline, and FAQPage schema that matches the visible FAQ word for word. One page at a time, logged.",tags:["content","ai"]},
+{k:"p_price",t:"Publish one dated pricing page",d:"'How much does a hotel website / marketing / booking system cost in Kenya?' AI Overviews now show on about 9 in 10 pricing and 'best X for Y' searches, and Claude searches for current prices. One page, every service, real ranges, 'last updated' date, linked from every service page.",tags:["content","ai","money"]},
+{k:"p_jahazi",t:"Build the Jahazi POS comparison page",d:"Jahazi was named in 0 of 6 AI answers. Compare it fairly with the POS systems AI actually named (Veira, Cute Profit POS, Retaela, WIK POS, NodePoint): eTIMS, M-Pesa, field sales app, online store, offline use, price, support. Facts only from each vendor's own site, dated and linked. Say where a rival fits better.",tags:["content","ai"]},
+{k:"p_safina",t:"Keep the Safina comparison honest and dated",d:"It's the kind of page AI cites: a table, clear criteria, real prices. Add a 'checked on' date per vendor, re-check prices every quarter, and state that Prolific VA built Safina MIS.",tags:["content","ai","quick"]},
+{k:"p_choose",t:"Write a buyer's guide: choosing a website and marketing partner for a coast hotel",d:"Unbranded questions are 59% of buying prompts, and AI adds a brand the person didn't name in 87% of them. A guide that says we wrote it, gives a criteria table, real price ranges, what proof to ask for and who suits which option gets cited. A promotional tone lowers citations.",tags:["content","ai"]},
+{k:"p_direct",t:"Write the direct-booking guide for Diani hotels",d:"'Do I need my own website if I'm on Booking.com and Airbnb?' Cover commission costs (Safina's table already has them), how M-Pesa direct booking works, and what AI tells travellers (Propellic: AI told 71% to book direct). Use M&amp;H as the example once it is live.",tags:["content","ai","money"]},
+{k:"p_area",t:"Add area pages only where you have real work there",d:"Diani first, then Kilifi, Watamu or Malindi only when there is a client, photos and prices from that place. Google's September spam update hit sites with near-identical pages per town. If the page reads the same with the town swapped, don't publish it.",tags:["content"]},
+{k:"p_season",t:"Get pages ready before the booking peaks",d:"AI travel searches rise around December and May planning peaks (IDHL). Owners hire before their high season. Have the pricing page, the direct-booking guide and the M&amp;H case study live and current before late May 2027.",tags:["content","money"]},
+{k:"p_img",t:"Make portfolio photos findable by Google Lens",d:"Since 24 Sep, Search Console shows image-led searches (Lens, Circle to Search) as 'Web: multimodal'. Use real img tags, not CSS backgrounds, descriptive file names (mandh-boutique-hotel-diani-pool.webp), specific alt text, and text near each image saying what it shows. Do the same on client hotel sites, where guests search by room photos.",tags:["tech","quick"]}
+]},
+{dot:"#c9a96e",name:"5 — Get named on the pages AI reads",week:"Week 2–12 · the slowest part, start early",items:[
+{k:"p_cited",t:"List the pages AI cites for our prompts, then ask their authors",d:"Brands mentioned on more of the cited pages sit higher in ChatGPT's list (Surfer, correlation 0.41). From the baseline runs, list cited pages that name rivals but not us. Before asking to be added, ask the author how they choose who to include.",tags:["ai"]},
+{k:"p_reviews",t:"Collect Google reviews from every client",d:"Review volume tracked closely with being named by AI (5% with none, 53% with 1,000+), and 74% of buyers are less likely to buy if a chatbot flags mixed reviews. Ask each client for a Google review, plus Clutch where they'll do it.",tags:["ai","quick"],sub:[
+ {k:"p_rv_liz",t:"Liz, Palm &amp; Tide",d:"Google review and Clutch."},
+ {k:"p_rv_jul",t:"Julius, Kakamega Guest House",d:"Google review about Safina MIS."},
+ {k:"p_rv_ng",t:"Baba Mwaniki, New Glory Enterprises",d:"Google review about Jahazi POS."},
+ {k:"p_rv_moh",t:"Ndurya, Mohaa Computers",d:"Google review."},
+ {k:"p_rv_zan",t:"Zanzitan",d:"Google review."},
+ {k:"p_rv_mh",t:"Margret, M&amp;H Boutique Hotel",d:"After launch."}
+]},
+{k:"p_gbp",t:"Finish Google Business Profile and claim Bing Places",d:"Google Business Profile was the biggest single source in local AI answers (29%). ChatGPT barely uses it and leans on Bing, so claim Bing Places too. Category, services, service areas (Diani, Ukunda, Kwale, coast), photos of real work, the one sentence.",tags:["tech","ai","quick"]},
+{k:"p_credit",t:"Add a 'Website by Prolific VA' credit on client sites",d:"Palm &amp; Tide, Zanzitan, M&amp;H, Mohaa Computers, GoldenStar, EuroBuild. A small footer link with plain wording. Each one is a page that connects our name to hospitality websites.",tags:["ai","quick"]},
+{k:"p_dirs",t:"List Prolific VA where agencies are compared",d:"Clutch (fix first), GoodFirms, DesignRush, and Kenyan business directories, plus supplier lists of coast hotel and tourism associations if they publish them. Same name, sentence and contacts everywhere. Skip paid placements.",tags:["ai"]},
+{k:"p_pesapal",t:"Get Safina listed where AI already looks for booking software",d:"In October AI cited pesapal.com and kiotapay.com for booking-software questions. Ask Pesapal (and any payment partner Safina uses) about an integration or partner listing.",tags:["ai"]},
+{k:"p_press",t:"Pitch the Diani AI-visibility report to Kenyan press",d:"A claim confirmed by a site with no stake in us counts as evidence. Pitch the report (with corrected numbers) to Techweez (contact made through KweliAI), TechCabal and Kenyan hospitality and tourism publications. Short LinkedIn and Medium versions that link back.",tags:["ai","content"]},
+{k:"p_meta",t:"Post on Instagram and Facebook in the words owners use",d:"Meta AI searches Instagram, Facebook and Threads posts for local and service questions, prefers first-person posts over ads, and only searches posts from 2025 on. Post real work ('we built direct booking for a boutique hotel in Kinondo'), and ask clients to post about their new site or system.",tags:["content","ai"]},
+{k:"p_groups",t:"Answer in the places owners ask each other",d:"Hospitality owners' Facebook and WhatsApp groups and LinkedIn. Answer the question plainly, link only when it helps, and don't pitch.",tags:["ai"]}
+]},
+{dot:"#1D9E75",name:"6 — Make it easy to hire us",week:"Week 2–4 · people and AI agents",items:[
+{k:"p_agent",t:"Run the 5-minute agent test on a phone",d:"AI agents now open sites and fill in forms. Could someone request a demo or a quote using only what's public: what we do, where, what it costs, how to ask? If a person would struggle, an agent will fail.",tags:["money","quick"]},
+{k:"p_paths",t:"Test every enquiry path",d:"tel: opens the dialler, WhatsApp opens with the pre-filled message, the form arrives, the success message is right, and the reply-time promise is the same everywhere.",tags:["money","quick"]},
+{k:"p_official",t:"Give 'book a demo' and 'get a quote' their own clear pages",d:"Google is testing a box at the top of AI answers for the one official page that finishes a task. Make the demo and quote pages obviously that page: what happens, how long it takes, what to prepare.",tags:["money","content"]},
+{k:"p_phone",t:"Be ready for calls placed by AI",d:"Google's AI can now call businesses for a customer and report back. Whoever answers should be able to give prices, timelines and availability in one call.",tags:["money"]}
+]},
+{dot:"#888780",name:"7 — Measure monthly, never weekly",week:"From January 2027",items:[
+{k:"p_monthly",t:"Run the prompt test every month",d:"3 runs per prompt on every tool, fresh chats, prompt pasted exactly, no follow-ups. Report the named rate per tool and per service line. 7 in 10 businesses AI names appear on only one assistant, so never judge from one tool.",tags:["track","ai"]},
+{k:"p_brandtrack",t:"Watch branded searches next to AI referrals",d:"If 'prolific va' searches rise while AI referrals stay flat, AI is probably sending people through Google. Count it as AI's work.",tags:["track"]},
+{k:"p_enq",t:"Count enquiries and signed clients by source",d:"Traffic can stay flat while enquiries grow. Use the form field and call notes. The number that matters is hospitality clients signed.",tags:["track","money"]},
+{k:"p_gen",t:"Check Search Console's Generative AI report monthly",d:"It shows impressions in AI Overviews and AI Mode by page. Ignore 9 to 11 Nov 2026 (a logging error lowered them).",tags:["track","ai","quick"]},
+{k:"p_models",t:"Re-test after each big AI model release",d:"A release can change what a model knows, and newer models answer from memory more often at low effort. Re-run the prompt bank within 2 to 4 weeks of a major one.",tags:["track","ai"]}
+]}
+];
+
+let S={},F='all';
+try{S=JSON.parse(localStorage.getItem('pva_cl_v4')||'{}')}catch(e){}
+PH.forEach(p=>p.items.forEach(i=>{if(i.done&&S[i.k]===undefined)S[i.k]=true}));
+function save(){try{localStorage.setItem('pva_cl_v4',JSON.stringify(S))}catch(e){}}
+
+function setF(f,btn){
+  F=f;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+
+function id(pi,ii){return PH[pi].items[ii].k}
+
+function toggle(key){
+  S[key]=!S[key];
+  save();
+  updateStats();
+  const el=document.querySelector(`[data-id="${key}"]`);
+  if(!el)return;
+  el.classList.toggle('done',S[key]);
+  const cb=el.querySelector('.cb');
+  cb.classList.toggle('on',S[key]);
+  cb.innerHTML=S[key]?'<span class="ck">✓</span>':'';
+  const ph=el.closest('.phase');
+  if(ph){
+    const pi=ph.dataset.pi;
+    const done=PH[pi].items.filter((_,ii)=>S[id(pi,ii)]).length;
+    ph.querySelector('.phase-tally').textContent=done+'/'+PH[pi].items.length;
+  }
+}
+
+function updateStats(){
+  let total=0,done=0,quick=0;
+  PH.forEach((p,pi)=>p.items.forEach((item,ii)=>{
+    total++;
+    if(S[id(pi,ii)])done++;
+    if(item.tags.includes('quick')&&!S[id(pi,ii)])quick++;
+  }));
+  document.getElementById('sDone').textContent=done;
+  document.getElementById('sTotal').textContent=total;
+  document.getElementById('sQuick').textContent=quick;
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('pct').textContent=pct+'%';
+}
+
+const TL={tech:'technical',content:'content',money:'enquiries',track:'tracking',quick:'quick win',ai:'AI visibility'};
+const TC={tech:'t-tech',content:'t-content',money:'t-money',track:'t-track',quick:'t-quick',ai:'t-ai'};
+
+let O={};try{O=JSON.parse(localStorage.getItem('pva_cl_open')||'{}')}catch(e){}
+function saveO(){try{localStorage.setItem('pva_cl_open',JSON.stringify(O))}catch(e){}}
+function subDone(st){return S[st.k]===undefined?!!st.done:!!S[st.k]}
+function subLabel(item){if(!item.sub)return'';const d=item.sub.filter(subDone).length;return ` · ${d}/${item.sub.length} done`}
+function extras(item,key){
+  if(!item.x&&!item.sub)return'';
+  const open=!!O[key];
+  const subHTML=item.sub?`<div class="sub">${item.sub.map(st=>{const on=subDone(st);return `<div class="sub-item${on?' on':''}" data-sk="${st.k}" onclick="event.stopPropagation();toggleSub('${key}','${st.k}')"><div class="cb${on?' on':''}">${on?'<span class="ck">✓</span>':''}</div><div><div class="sub-t">${st.t}</div><div class="sub-d">${st.d}</div></div></div>`}).join('')}</div>`:'';
+  const xHTML=item.x?`<div class="ix">${item.x}</div>`:'';
+  return `<button class="ix-toggle" onclick="event.stopPropagation();toggleX('${key}')">${open?'Hide details ▴':'Show details ▾'}<span class="sub-count">${subLabel(item)}</span></button><div class="ix-wrap" onclick="event.stopPropagation()"${open?'':' hidden'}>${subHTML}${xHTML}</div>`;
+}
+function findItem(key){for(const p of PH)for(const it of p.items)if(it.k===key)return it}
+function toggleX(key){
+  O[key]=!O[key];saveO();
+  const el=document.querySelector(`[data-id="${key}"]`);if(!el)return;
+  el.querySelector('.ix-wrap').hidden=!O[key];
+  el.querySelector('.ix-toggle').innerHTML=(O[key]?'Hide details ▴':'Show details ▾')+`<span class="sub-count">${subLabel(findItem(key))}</span>`;
+}
+function toggleSub(key,sk){
+  const it=findItem(key);const st=it.sub.find(x=>x.k===sk);
+  S[sk]=!subDone(st);save();
+  const row=document.querySelector(`[data-sk="${sk}"]`);
+  row.classList.toggle('on',S[sk]);
+  const cb=row.querySelector('.cb');cb.classList.toggle('on',S[sk]);cb.innerHTML=S[sk]?'<span class="ck">✓</span>':'';
+  document.querySelector(`[data-id="${key}"] .sub-count`).textContent=subLabel(it);
+}
+
+function render(){
+  const root=document.getElementById('root');
+  root.innerHTML='';
+  PH.forEach((phase,pi)=>{
+    const visible=phase.items.filter(item=>F==='all'||item.tags.includes(F));
+    if(!visible.length)return;
+    const doneCount=phase.items.filter((_,ii)=>S[id(pi,ii)]).length;
+    const ph=document.createElement('div');
+    ph.className='phase';
+    ph.dataset.pi=pi;
+    ph.innerHTML=`<div class="phase-header"><div class="phase-dot" style="background:${phase.dot}"></div><span class="phase-name">${phase.name}</span><span class="phase-week">${phase.week}</span><span class="phase-tally">${doneCount}/${phase.items.length}</span></div><div class="items" id="il${pi}"></div>`;
+    root.appendChild(ph);
+    const il=ph.querySelector(`#il${pi}`);
+    phase.items.forEach((item,ii)=>{
+      if(F!=='all'&&!item.tags.includes(F))return;
+      const key=id(pi,ii);
+      const done=!!S[key];
+      const tagHTML=item.tags.map(t=>`<span class="tag ${TC[t]}">${TL[t]}</span>`).join('');
+      const el=document.createElement('div');
+      el.className='item'+(done?' done':'');
+      el.dataset.id=key;
+      el.innerHTML=`<div class="cb${done?' on':''}">${done?'<span class="ck">✓</span>':''}</div><div class="ibody"><div class="ititle">${item.t}</div><div class="idesc">${item.d}</div>${extras(item,key)}<div class="tags">${tagHTML}</div></div>`;
+      el.addEventListener('click',()=>toggle(key));
+      il.appendChild(el);
+    });
+  });
+  updateStats();
+}
+
+function copyLink(){
+  navigator.clipboard.writeText(location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:not(.primary)');
+    const orig=btn.textContent;
+    btn.textContent='Copied!';
+    setTimeout(()=>btn.textContent=orig,2000);
+  });
+}
+
+render();
+</script>
 </body>
 </html>
